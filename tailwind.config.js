@@ -8,27 +8,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Brand Colors
-        primary: '#00C8FF', // Neon Cyan
-        secondary: '#7C3AED', // Deep Purple
-        accent: '#4CC9F0', // Soft Ice Blue
-        warmAccent: '#FFB86B', // Minimal use
-        darkBg: '#05060D',
-        glassWhite: 'rgba(255,255,255,0.08)',
-        // Legacy support
-        coolBlue: '#00C8FF',
-        deepPurple: '#7C3AED',
-        cyanGlow: '#4CC9F0',
+        // Cinematic Palette
+        darkBg: '#050505',      // Deepest Black
+        charcoal: '#0F0F10',    // Soft Black/Charcoal for cards
+        primary: '#D4AF37',     // Metallic Gold
+        secondary: '#E5E5E5',   // Off-white/Silver
+        accent: '#C5A028',      // Darker Gold for accents
+        warmAccent: '#F5F5DC',  // Beige/Cream for soft highlights
+        
+        // Semantic assignments
+        glassWhite: 'rgba(255,255,255,0.05)',
+        glassGold: 'rgba(212, 175, 55, 0.1)',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+        cinzel: ['Cinzel', 'serif'], // Optional for headings if added
       },
       boxShadow: {
-        glow: '0 6px 30px rgba(0,200,255,0.12), 0 8px 60px rgba(124,58,237,0.06)',
-        'glow-lg': '0 8px 40px rgba(0,200,255,0.2), 0 12px 80px rgba(124,58,237,0.1)',
-        'neon': '0 0 20px rgba(0,200,255,0.5), 0 0 40px rgba(124,58,237,0.3)',
-        'neon-cyan': '0 0 30px rgba(0,200,255,0.6), 0 0 60px rgba(0,200,255,0.3)',
+        'glow-gold': '0 0 20px rgba(212, 175, 55, 0.15), 0 0 40px rgba(212, 175, 55, 0.05)',
+        'glow-soft': '0 10px 40px -10px rgba(0,0,0,0.5)',
+        'cinematic': '0 20px 40px -20px rgba(0,0,0,0.7)',
       },
       backdropBlur: {
         xs: '2px',

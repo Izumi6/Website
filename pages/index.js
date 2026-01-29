@@ -11,31 +11,26 @@ const Name3D = dynamic(() => import('../components/Name3D'), { ssr: false })
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-darkBg via-[#0a0f1a] to-darkBg text-gray-100 overflow-x-hidden">
+    <div className="min-h-screen bg-darkBg text-secondary overflow-x-hidden selection:bg-primary/30">
       <Head>
-        <title>Suyash Vakhariya • 3D Portfolio</title>
-        <meta name="description" content="Suyash Vakhariya — Premium 3D Portfolio" />
+        <title>Suyash Vakhariya • Creative Developer</title>
+        <meta name="description" content="Suyash Vakhariya — Cinematic Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Subtle background pattern */}
-      <div className="fixed inset-0 z-0 opacity-30">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,200,255,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(124,58,237,0.1),transparent_50%)]" />
+      {/* Cinematic Ambient Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.03),transparent_70%)]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[100px] rounded-full opacity-20" />
       </div>
 
-      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <main className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-10">
         <Hero />
-        
-        {/* 3D Rotating Name Section */}
-        <section className="mt-32 md:mt-40">
-          <h2 className="text-3xl md:text-4xl font-poppins font-semibold mb-8 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            3D Identity
-          </h2>
-          <Name3D />
-        </section>
-        
+
+        {/* Separator */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-24 opacity-30" />
+
         <About />
         <Skills />
         <Projects />
@@ -43,9 +38,10 @@ export default function Home() {
         <Contact />
       </main>
 
-      <footer className="relative z-10 py-8 text-center text-sm opacity-60 backdrop-blur-sm border-t border-white/5 mt-20">
-        <div className="max-w-7xl mx-auto px-4">
-          © {new Date().getFullYear()} Suyash Vakhariya — Crafted with care
+      <footer className="relative z-10 py-12 text-center text-sm font-light text-gray-500 border-t border-white/5 mt-32">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+          <p>© {new Date().getFullYear()} Suyash Vakhariya</p>
+          <p className="text-xs tracking-widest uppercase opacity-70">Designed & Built with Cinematic Vision</p>
         </div>
       </footer>
     </div>
