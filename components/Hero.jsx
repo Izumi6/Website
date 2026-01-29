@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-6 text-lg md:text-xl max-w-xl text-gray-400 leading-relaxed font-light"
         >
-          Driving innovation at the intersection of technology and design. Building scalable solutions and defining digital luxury.
+          Founder of <span className="text-white font-medium">BookAHostel.in</span>. Solving real-world problems through scalable technology and innovative design.
         </motion.p>
 
         <motion.div
@@ -46,7 +46,7 @@ export default function Hero() {
             href="#projects"
             className="group relative px-8 py-4 bg-primary text-darkBg font-semibold rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
           >
-            <span className="relative z-10">View Work</span>
+            <span className="relative z-10">View Ventures</span>
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
           </a>
 
@@ -96,19 +96,6 @@ export default function Hero() {
             {/* Overlay Gradient for cinematic look */}
             <div className="absolute inset-0 bg-gradient-to-tr from-darkBg/60 via-transparent to-primary/10 mix-blend-overlay" />
           </div>
-
-          {/* Floating badge or decorative element */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="absolute -bottom-4 -left-4 md:bottom-10 md:-left-10 bg-darkBg/80 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-xl hidden md:block"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-xs font-mono text-gray-300">OPEN TO WORK</span>
-            </div>
-          </motion.div>
         </div>
       </motion.div>
 
