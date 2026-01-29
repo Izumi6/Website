@@ -1,0 +1,130 @@
+/* Cinematic Polish Effects */
+
+/* Lens dirt bloom effect */
+@keyframes bloom {
+  0%, 100% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(1.1) contrast(1.05);
+  }
+}
+
+.bloom-effect {
+  animation: bloom 3s ease-in-out infinite;
+}
+
+/* Neon chromatic aberration */
+@keyframes chromatic {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(0, 200, 255, 0.5),
+      2px 0 0 rgba(124, 58, 237, 0.5),
+      -2px 0 0 rgba(76, 201, 240, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px rgba(0, 200, 255, 0.7),
+      3px 0 0 rgba(124, 58, 237, 0.7),
+      -3px 0 0 rgba(76, 201, 240, 0.7);
+  }
+}
+
+.chromatic-text {
+  animation: chromatic 2s ease-in-out infinite;
+}
+
+/* Subtle camera shake on hover */
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-0.5px, -0.5px) rotate(-0.1deg); }
+  20% { transform: translate(0.5px, 0.5px) rotate(0.1deg); }
+  30% { transform: translate(-0.5px, 0.5px) rotate(-0.1deg); }
+  40% { transform: translate(0.5px, -0.5px) rotate(0.1deg); }
+  50% { transform: translate(-0.5px, -0.5px) rotate(-0.1deg); }
+  60% { transform: translate(0.5px, 0.5px) rotate(0.1deg); }
+  70% { transform: translate(-0.5px, 0.5px) rotate(-0.1deg); }
+  80% { transform: translate(0.5px, -0.5px) rotate(0.1deg); }
+  90% { transform: translate(-0.5px, -0.5px) rotate(-0.1deg); }
+}
+
+.camera-shake:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Ambient floating dust layer */
+@keyframes float-dust {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-40px) translateX(-10px);
+    opacity: 0.3;
+  }
+}
+
+.floating-dust {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 200, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(76, 201, 240, 0.1) 0%, transparent 50%);
+  animation: float-dust 20s ease-in-out infinite;
+}
+
+/* Title reflections on floor */
+.title-reflection {
+  position: relative;
+}
+
+.title-reflection::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(-1);
+  opacity: 0.2;
+  background: linear-gradient(to bottom, transparent, rgba(0, 200, 255, 0.3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(2px);
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  .bloom-effect,
+  .chromatic-text {
+    animation: none;
+  }
+  
+  .floating-dust {
+    display: none;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .bloom-effect,
+  .chromatic-text,
+  .camera-shake,
+  .floating-dust {
+    animation: none;
+  }
+}
+
+
+

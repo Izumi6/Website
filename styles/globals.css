@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import './cinematic.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #05060D;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 200, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #05060D;
+  color: #ffffff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00C8FF, #7C3AED);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4CC9F0, #7C3AED);
+}
+
+/* Utility classes */
+.text-neon {
+  text-shadow: 0 2px 12px rgba(0, 200, 255, 0.12), 0 6px 30px rgba(124, 58, 237, 0.06);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Interactive element hover hint */
+.interactive {
+  cursor: pointer;
+}
+
+/* Magnetic button effect (can be enhanced with JS) */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 3D tilt effect */
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+/* Glow animations */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.3), 0 0 40px rgba(124, 58, 237, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.5), 0 0 60px rgba(124, 58, 237, 0.3);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .text-5xl {
+    font-size: 2.25rem;
+  }
+  
+  .text-7xl {
+    font-size: 3rem;
+  }
+}
+
+/* Performance optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus visible styles for accessibility */
+.interactive:focus-visible {
+  outline: 2px solid rgba(0, 200, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 200, 255, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(0, 200, 255, 0.3);
+  color: #ffffff;
+}
+
