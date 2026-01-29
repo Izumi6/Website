@@ -24,116 +24,132 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="mt-32 md:mt-40">
-      <motion.h2
+    <section id="contact" className="mt-32 md:mt-40 mb-20">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-poppins font-semibold mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        transition={{ duration: 0.8 }}
+        className="text-center mb-16"
       >
-        Get In Touch
-      </motion.h2>
-      
-      <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-        <motion.form
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          onSubmit={handleSubmit}
-          className="p-8 md:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-glow-lg space-y-6"
-        >
-          <div>
-            <label className="block text-sm font-medium mb-2 text-gray-300">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="interactive w-full p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-gray-100 placeholder-gray-500"
-              placeholder="Your name"
-              required
-            />
-          </div>
-          
-          <div>
-            <label className="block text-sm font-medium mb-2 text-gray-300">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="interactive w-full p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-gray-100 placeholder-gray-500"
-              placeholder="you@example.com"
-              required
-            />
-          </div>
-          
-          <div>
-            <label className="block text-sm font-medium mb-2 text-gray-300">Message</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={6}
-              className="interactive w-full p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm focus:border-cyanGlow focus:outline-none focus:ring-2 focus:ring-cyanGlow/20 transition-all duration-300 text-gray-100 placeholder-gray-500 resize-none"
-              placeholder="Hello..."
-              required
-            />
-          </div>
-          
-          <button
-            type="submit"
-            className="interactive w-full px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary shadow-glow-lg hover:shadow-neon transform-gpu hover:scale-[1.02] transition-all duration-300 font-medium"
-          >
-            Send Message
-          </button>
-        </motion.form>
+        <span className="block text-primary font-cinzel text-sm tracking-[0.3em] mb-4 uppercase">
+          Connect
+        </span>
+        <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
+          Get in Touch
+        </h2>
+      </motion.div>
 
+      <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="p-8 md:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-glow-lg space-y-6"
+          transition={{ duration: 0.8 }}
+          className="rounded-3xl bg-charcoal/50 border border-white/5 p-8 md:p-12 backdrop-blur-md shadow-2xl relative overflow-hidden"
         >
-          <div>
-            <div className="text-sm opacity-70 mb-2">Phone</div>
-            <a
-              href="tel:+919356179232"
-              className="interactive text-lg md:text-xl font-medium text-primary hover:text-accent transition-colors"
-            >
-              +91 9356179232
-            </a>
-          </div>
+          {/* Background Glow */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
 
-          <div>
-            <div className="text-sm opacity-70 mb-2">Email</div>
-            <a
-              href="mailto:vakhariyasuyash@gmail.com"
-              className="interactive text-lg md:text-xl font-medium text-cyanGlow hover:text-coolBlue transition-colors break-all"
-            >
-              vakhariyasuyash@gmail.com
-            </a>
-          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-cinzel text-white mb-2">Business Inquiries</h3>
+                <p className="text-gray-400 font-light text-sm">
+                  Available for leadership roles, consulting, and technological partnerships.
+                </p>
+              </div>
 
-          <div>
-            <div className="text-sm opacity-70 mb-2">LinkedIn</div>
-            <a
-              href="https://www.linkedin.com/in/suyashvakhariya"
-              target="_blank"
-              rel="noreferrer"
-              className="interactive text-lg md:text-xl font-medium text-cyanGlow hover:text-coolBlue transition-colors underline"
-            >
-              linkedin.com/in/suyashvakhariya
-            </a>
-          </div>
+              <div className="space-y-6">
+                <a
+                  href="mailto:vakhariyasuyash@gmail.com"
+                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    ✉️
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</div>
+                    <div className="text-white group-hover:text-primary transition-colors">vakhariyasuyash@gmail.com</div>
+                  </div>
+                </a>
 
-          <div className="pt-6 border-t border-white/10">
-            <p className="text-gray-300 leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-            </p>
+                <a
+                  href="tel:+919356179232"
+                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    📞
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Phone</div>
+                    <div className="text-white group-hover:text-primary transition-colors">+91 9356179232</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/suyashvakhariya"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    🔗
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Network</div>
+                    <div className="text-white group-hover:text-primary transition-colors">LinkedIn Profile</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* Simplified Form or Call to Action */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-50" />
+              <form onSubmit={handleSubmit} className="relative space-y-4 p-6 rounded-2xl border border-white/5 bg-black/20">
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Name"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    required
+                  />
+                </div>
+                <div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    placeholder="Message"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-3 bg-primary text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </motion.div>
       </div>

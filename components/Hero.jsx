@@ -17,7 +17,7 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <span className="block text-primary font-cinzel text-lg tracking-[0.2em] mb-4 uppercase">
-            Creative Developer
+            CEO and Founder
           </span>
           <h1 className="text-5xl md:text-7xl font-poppins font-bold leading-tight mb-6">
             <span className="block text-white">Suyash</span>
@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-6 text-lg md:text-xl max-w-xl text-gray-400 leading-relaxed font-light"
         >
-          Crafting immersive digital experiences with cinematic precision and code.
+          Driving innovation at the intersection of technology and design. Building scalable solutions and defining digital luxury.
         </motion.p>
 
         <motion.div
