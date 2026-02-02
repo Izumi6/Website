@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { useEffect } from 'react'
 import SignatureLogo from '../components/SignatureLogo'
+import CustomCursor from '../components/CustomCursor'
 
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -12,6 +13,7 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <CustomCursor />
       <SignatureLogo />
       <Component {...pageProps} />
     </>

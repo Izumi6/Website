@@ -6,6 +6,7 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import TechAchievements from '../components/TechAchievements'
 import Contact from '../components/Contact'
+import ParticlesBackground from '../components/ParticlesBackground'
 
 const Name3D = dynamic(() => import('../components/Name3D'), { ssr: false })
 
@@ -20,10 +21,7 @@ export default function Home() {
       </Head>
 
       {/* Cinematic Ambient Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.03),transparent_70%)]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[100px] rounded-full opacity-20" />
-      </div>
+      <ParticlesBackground />
 
       <main className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-10">
         <Hero />
