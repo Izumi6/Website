@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-darkBg text-secondary overflow-x-hidden selection:bg-primary/30">
       <Head>
-        <title>Suyash Vakhariya • Creative Developer</title>
+        <title>Suyash Vakhariya</title>
         <meta name="description" content="Suyash Vakhariya — Cinematic Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
