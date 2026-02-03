@@ -1,30 +1,53 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { SiGmail } from 'react-icons/si'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Add your form submission logic here
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! I\'ll get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
-  }
+  const socialLinks = [
+    {
+      id: 'instagram',
+      name: 'Instagram',
+      label: 'Suyash Vakhariya',
+      link: 'https://www.instagram.com/iblamesuyash',
+      icon: <FaInstagram className="w-8 h-8" />,
+      color: 'group-hover:text-[#E1306C]',
+      borderColor: 'group-hover:border-[#E1306C]/30',
+      bgColor: 'group-hover:bg-[#E1306C]/10'
+    },
+    {
+      id: 'linkedin',
+      name: 'LinkedIn',
+      label: 'Suyash Vakhariya',
+      link: 'https://www.linkedin.com/in/suyashvakhariya',
+      icon: <FaLinkedin className="w-8 h-8" />,
+      color: 'group-hover:text-[#0077B5]',
+      borderColor: 'group-hover:border-[#0077B5]/30',
+      bgColor: 'group-hover:bg-[#0077B5]/10'
+    },
+    {
+      id: 'email',
+      name: 'Email',
+      label: 'vakhariyasuyash@gmail.com',
+      link: 'mailto:vakhariyasuyash@gmail.com',
+      icon: <SiGmail className="w-8 h-8" />,
+      color: 'group-hover:text-[#EA4335]',
+      borderColor: 'group-hover:border-[#EA4335]/30',
+      bgColor: 'group-hover:bg-[#EA4335]/10'
+    },
+    {
+      id: 'website',
+      name: 'Book A Hostel',
+      label: 'bookahostel.in',
+      link: 'https://bookahostel.in/',
+      image: '/images/bookahostel-logo.jpg',
+      color: 'group-hover:text-[#EA4335]', // Using a brand color red similar to the logo
+      borderColor: 'group-hover:border-[#EA4335]/30',
+      bgColor: 'group-hover:bg-[#EA4335]/10'
+    }
+  ]
 
   return (
-    <section id="contact" className="mt-32 md:mt-40 mb-20">
+    <section id="contact" className="mt-32 md:mt-40 mb-20 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,119 +61,44 @@ export default function Contact() {
         <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
           Get in Touch
         </h2>
+        <p className="mt-6 text-gray-400 font-light text-sm max-w-2xl mx-auto">
+          Available for leadership roles, consulting, and technological partnerships.
+        </p>
       </motion.div>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="rounded-3xl bg-charcoal/50 border border-white/5 p-8 md:p-12 backdrop-blur-md shadow-2xl relative overflow-hidden"
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Background Glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
-
-          <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-cinzel text-white mb-2">Business Inquiries</h3>
-                <p className="text-gray-400 font-light text-sm">
-                  Available for leadership roles, consulting, and technological partnerships.
-                </p>
+          {socialLinks.map((item) => (
+            <a
+              key={item.id}
+              href={item.link}
+              target={item.id === 'email' ? '_self' : '_blank'}
+              rel="noreferrer"
+              className={`group flex flex-col items-center p-8 rounded-3xl bg-white/5 border border-white/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 ${item.borderColor} ${item.bgColor}`}
+            >
+              <div className={`w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 text-white transition-colors duration-300 ${item.color}`}>
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                ) : (
+                  item.icon
+                )}
               </div>
-
-              <div className="space-y-6">
-                <a
-                  href="mailto:vakhariyasuyash@gmail.com"
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                    ✉️
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</div>
-                    <div className="text-white group-hover:text-primary transition-colors">vakhariyasuyash@gmail.com</div>
-                  </div>
-                </a>
-
-                <a
-                  href="tel:+919356179232"
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                    📞
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Phone</div>
-                    <div className="text-white group-hover:text-primary transition-colors">+91 9356179232</div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/suyashvakhariya"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                    🔗
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Network</div>
-                    <div className="text-white group-hover:text-primary transition-colors">LinkedIn Profile</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            {/* Simplified Form or Call to Action */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-50" />
-              <form onSubmit={handleSubmit} className="relative space-y-4 p-6 rounded-2xl border border-white/5 bg-black/20">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Name"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    placeholder="Message"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3 bg-primary text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
+              <h3 className="text-white font-cinzel text-lg mb-2">{item.name}</h3>
+              <p className={`text-sm text-gray-400 transition-colors duration-300 ${item.color}`}>
+                {item.label}
+              </p>
+            </a>
+          ))}
         </motion.div>
       </div>
     </section>
