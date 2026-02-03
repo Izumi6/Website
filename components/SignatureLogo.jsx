@@ -16,63 +16,21 @@ export default function SignatureLogo() {
 
   return (
     <motion.div
-      className="fixed top-6 left-6 z-50"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      className="fixed top-6 left-6 z-50 cursor-pointer"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.1 }}
     >
-      <svg
-        width="200"
-        height="60"
-        viewBox="0 0 400 100"
-        className="drop-shadow-[0_0_10px_rgba(0,200,255,0.6)]"
-      >
-        <defs>
-          <linearGradient id="signatureGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00C8FF" />
-            <stop offset="50%" stopColor="#7C3AED" />
-            <stop offset="100%" stopColor="#4CC9F0" />
-          </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        
-        <motion.path
-          d={signaturePath}
-          fill="none"
-          stroke="url(#signatureGradient)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          filter="url(#glow)"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={isAnimated ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
-          transition={{
-            pathLength: { duration: 2, ease: "easeInOut" },
-            opacity: { duration: 0.5 }
-          }}
+      <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-primary/50 shadow-[0_0_15px_rgba(var(--primary-rgb),0.3)]">
+        <img
+          src="/images/suyash-hero-portrait.jpg"
+          alt="Suyash Vakhariya Logo"
+          className="w-full h-full object-cover"
         />
-        
-        {/* Text below signature */}
-        <motion.text
-          x="200"
-          y="80"
-          fontSize="12"
-          fill="#00C8FF"
-          textAnchor="middle"
-          className="font-poppins"
-          initial={{ opacity: 0 }}
-          animate={isAnimated ? { opacity: 0.8 } : { opacity: 0 }}
-          transition={{ delay: 2, duration: 0.5 }}
-        >
-          Suyash Vakhariya
-        </motion.text>
-      </svg>
+        {/* Glow effect */}
+        <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+      </div>
     </motion.div>
   )
 }
