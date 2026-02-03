@@ -15,9 +15,50 @@ export default function Home() {
     <div className="min-h-screen bg-darkBg text-secondary overflow-x-hidden selection:bg-primary/30">
       <Head>
         <title>Suyash Vakhariya</title>
-        <meta name="description" content="Suyash Vakhariya — Cinematic Portfolio" />
+        <meta name="description" content="Suyash Vakhariya — Cinematic Portfolio. CEO and Founder of BookAHostel.in. Solving real-world problems through scalable technology and innovative design." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://suyashvakhariya.com/" />
+        <meta property="og:title" content="Suyash Vakhariya — CEO & Founder" />
+        <meta property="og:description" content="Cinematic Portfolio of Suyash Vakhariya. Founder of BookAHostel.in." />
+        <meta property="og:image" content="https://suyashvakhariya.com/images/suyash-hero-portrait.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://suyashvakhariya.com/" />
+        <meta property="twitter:title" content="Suyash Vakhariya — CEO & Founder" />
+        <meta property="twitter:description" content="Cinematic Portfolio of Suyash Vakhariya. Founder of BookAHostel.in." />
+        <meta property="twitter:image" content="https://suyashvakhariya.com/images/suyash-hero-portrait.jpg" />
+
+        {/* Schema.org JSON-LD for Google Knowledge Graph */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Suyash Vakhariya",
+              "url": "https://suyashvakhariya.com",
+              "image": "https://suyashvakhariya.com/images/suyash-hero-portrait.jpg",
+              "sameAs": [
+                "https://www.instagram.com/iblamesuyash",
+                "https://www.linkedin.com/in/suyashvakhariya",
+                "https://bookahostel.in"
+              ],
+              "jobTitle": "CEO and Founder",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "BookAHostel.in"
+              },
+              "description": "Founder of BookAHostel.in. Solving real-world problems through scalable technology and innovative design."
+            })
+          }}
+        />
       </Head>
 
       {/* Cinematic Ambient Background */}
