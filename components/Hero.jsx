@@ -89,7 +89,7 @@ export default function Hero() {
 
           <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/5 shadow-2xl shadow-black/50 ring-1 ring-white/10">
             <img
-              src="/assets/hero-portrait.png"
+              src="/images/suyash-hero-portrait.jpg"
               alt="Suyash Vakhariya"
               className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
             />
