@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion'
-import { FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 import { SiGmail } from 'react-icons/si'
 
 export default function Contact() {
   const socialLinks = [
     {
-      id: 'instagram',
-      name: 'Instagram',
-      label: 'Suyash Vakhariya',
-      link: 'https://www.instagram.com/iblamesuyash',
-      icon: <FaInstagram className="w-8 h-8" />,
-      color: 'group-hover:text-[#E1306C]',
-      borderColor: 'group-hover:border-[#E1306C]/30',
-      bgColor: 'group-hover:bg-[#E1306C]/10'
+      id: 'github',
+      name: 'GitHub',
+      label: 'Izumi6',
+      link: 'https://github.com/Izumi6',
+      icon: <FaGithub className="w-8 h-8" />,
+      color: 'group-hover:text-white',
+      borderColor: 'group-hover:border-white/30',
+      bgColor: 'group-hover:bg-white/10'
     },
     {
       id: 'linkedin',
@@ -35,15 +35,15 @@ export default function Contact() {
       bgColor: 'group-hover:bg-[#EA4335]/10'
     },
     {
-      id: 'website',
-      name: 'Book A Hostel',
-      label: 'bookahostel.in',
-      link: 'https://bookahostel.in/',
-      image: '/images/bookahostel-logo.jpg',
-      color: 'group-hover:text-[#EA4335]', // Using a brand color red similar to the logo
-      borderColor: 'group-hover:border-[#EA4335]/30',
-      bgColor: 'group-hover:bg-[#EA4335]/10'
-    }
+      id: 'instagram',
+      name: 'Instagram',
+      label: '@iblamesuyash',
+      link: 'https://www.instagram.com/iblamesuyash',
+      icon: <FaInstagram className="w-8 h-8" />,
+      color: 'group-hover:text-[#E1306C]',
+      borderColor: 'group-hover:border-[#E1306C]/30',
+      bgColor: 'group-hover:bg-[#E1306C]/10'
+    },
   ]
 
   return (
@@ -62,7 +62,7 @@ export default function Contact() {
           Get in Touch
         </h2>
         <p className="mt-6 text-gray-400 font-light text-sm max-w-2xl mx-auto">
-          Available for leadership roles, consulting, and technological partnerships.
+          Open to AI engineering roles, technical product management, and research collaborations.
         </p>
       </motion.div>
 
@@ -83,15 +83,7 @@ export default function Contact() {
               className={`group flex flex-col items-center p-8 rounded-3xl bg-white/5 border border-white/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 ${item.borderColor} ${item.bgColor}`}
             >
               <div className={`w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 text-white transition-colors duration-300 ${item.color}`}>
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                ) : (
-                  item.icon
-                )}
+                {item.icon}
               </div>
               <h3 className="text-white font-cinzel text-lg mb-2">{item.name}</h3>
               <p className={`text-sm text-gray-400 transition-colors duration-300 ${item.color}`}>
@@ -104,4 +96,3 @@ export default function Contact() {
     </section>
   )
 }
-

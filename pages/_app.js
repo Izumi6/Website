@@ -1,7 +1,7 @@
 import Script from 'next/script'
 import '../styles/globals.css'
 import { useEffect } from 'react'
-import SignatureLogo from '../components/SignatureLogo'
+import Navbar from '../components/Navbar'
 import CustomCursor from '../components/CustomCursor'
 
 export default function MyApp({ Component, pageProps }) {
@@ -28,9 +28,8 @@ export default function MyApp({ Component, pageProps }) {
         `}
       </Script>
       <CustomCursor />
-      <SignatureLogo />
+      <Navbar />
       <Component {...pageProps} />
     </>
   )
 }
-

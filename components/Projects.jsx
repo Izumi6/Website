@@ -1,57 +1,199 @@
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const HologramID = dynamic(() => import('./HologramID'), { ssr: false })
 const NeuromorphicProject = dynamic(() => import('./projects/NeuromorphicProject'), { ssr: false })
 const CarIgnitionCard = dynamic(() => import('./projects/CarIgnitionCard'), { ssr: false })
 const AICursorProject = dynamic(() => import('./projects/AICursorProject'), { ssr: false })
-const BrandingSphere = dynamic(() => import('./projects/BrandingSphere'), { ssr: false })
 const SpamDetector = dynamic(() => import('./projects/SpamDetector'), { ssr: false })
 
-const projects = [
+const featuredProjects = [
   {
-    id: 0,
-    title: 'Neuromorphic Computing Research',
-    desc: 'A bio-inspired computational architecture mimicking neuronal firing patterns for ultra-efficient intelligent processing.',
-    tech: 'Python • TensorFlow • Neural Networks',
+    id: 'neuromorphic',
+    title: 'Neuromorphic Computing SNN',
+    desc: 'Bio-inspired spiking neural network architecture mimicking neuronal firing patterns for ultra-efficient intelligent processing and signal classification.',
+    tech: ['Python', 'TensorFlow', 'Neural Networks', 'SNN'],
+    github: 'https://github.com/Izumi6/neuromorphic-computing-snn',
+    live: null,
     component: 'neuromorphic',
+    category: 'AI/ML Research',
   },
   {
-    id: 1,
-    title: 'Car Ignition Key Card System',
-    desc: 'NFC-based smart ignition system allowing cars to start using an encrypted identity card with secure authentication.',
-    tech: 'NFC • Embedded Systems • Security',
-    component: 'carIgnition',
-  },
-  {
-    id: 2,
-    title: 'Master Card — Premium Identity',
-    desc: 'A unified national identity card integrating biometrics, digital verification, emergency data, and multi-authority access levels.',
-    tech: 'Three.js • React Three Fiber • Custom Shaders',
-    component: 'hologram',
-  },
-  {
-    id: 3,
-    title: 'AI Cursor Interaction Engine',
-    desc: 'Custom AI-powered dynamic cursor system that blends motion physics and reactive visuals.',
-    tech: 'React • Framer Motion • Canvas API',
-    component: 'aiCursor',
-  },
-  {
-    id: 4,
-    title: '3D Personal Branding Sphere',
-    desc: '3D branding object representing my identity, design style, and digital signature.',
-    tech: 'Three.js • React Three Fiber • GLSL',
-    component: 'branding',
-  },
-  {
-    id: 5,
-    title: 'Smart Email Spam Detector',
-    desc: 'Machine learning model trained to classify emails and block spam using NLP and probabilistic filtering.',
-    tech: 'Python • NLP • Machine Learning',
+    id: 'spam-detector',
+    title: 'Email Spam Detection System',
+    desc: 'Machine learning model trained to classify emails and block spam using NLP techniques and probabilistic filtering with high accuracy.',
+    tech: ['Python', 'Scikit-learn', 'NLP', 'ML'],
+    github: 'https://github.com/Izumi6/Email-Spam-Detection-System-',
+    live: null,
     component: 'spamDetector',
+    category: 'AI/ML',
+  },
+  {
+    id: 'car-ignition',
+    title: 'RFID Car Ignition System',
+    desc: 'NFC/RFID-based smart ignition system allowing vehicles to start using an encrypted identity card with secure multi-factor authentication.',
+    tech: ['C++', 'RFID', 'Embedded Systems', 'IoT'],
+    github: 'https://github.com/Izumi6/RFID-Based-Car-Ignition-System',
+    live: null,
+    component: 'carIgnition',
+    category: 'IoT / Embedded',
   },
 ]
+
+const deployedProjects = [
+  {
+    id: 'cloud-secure',
+    title: 'CloudSecure',
+    desc: 'Enterprise cloud security platform with real-time threat monitoring, compliance dashboards, and automated incident response workflows.',
+    tech: ['JavaScript', 'React', 'Cloud Security'],
+    github: 'https://github.com/Izumi6/cloud-secure',
+    live: 'https://cloud-secure.vercel.app',
+    category: 'Cloud Security',
+  },
+  {
+    id: 'price-pulse',
+    title: 'Price Pulse',
+    desc: 'Smart shopping analytics platform that tracks price trends, compares products, and delivers intelligent purchase recommendations.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'E-commerce'],
+    github: 'https://github.com/Izumi6/price-pulse-e-comerce',
+    live: 'https://price-pulse-e-comerce.vercel.app',
+    category: 'Full-Stack',
+  },
+  {
+    id: 'smart-study',
+    title: 'Smart Study Planner',
+    desc: 'Intelligent study planning tool with Google authentication, task scheduling, progress tracking, and personalized study recommendations.',
+    tech: ['JavaScript', 'React', 'Auth', 'Firebase'],
+    github: 'https://github.com/Izumi6/Smart-Study-Planner',
+    live: 'https://smart-study-planner-izumi6s-projects.vercel.app',
+    category: 'EdTech',
+  },
+  {
+    id: 'edunet',
+    title: 'Edunet Dashboard',
+    desc: 'Education analytics platform with student performance tracking, course management, and interactive data visualization dashboards.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Education'],
+    github: 'https://github.com/Izumi6/edunet',
+    live: 'https://edunet-izumi6s-projects.vercel.app',
+    category: 'EdTech',
+  },
+]
+
+const aiProjects = [
+  {
+    id: 'fake-news',
+    title: 'Fake News Detection',
+    desc: 'NLP-powered misinformation classifier using advanced text analysis and machine learning to identify fake news articles with high precision.',
+    tech: ['Python', 'NLP', 'ML', 'Classification'],
+    github: 'https://github.com/Izumi6/Fake-News-Detection-System',
+    category: 'AI/ML',
+  },
+  {
+    id: 'movie-rec',
+    title: 'Movie Recommendation System',
+    desc: 'Collaborative filtering recommendation engine that analyzes user preferences and movie metadata to deliver personalized suggestions.',
+    tech: ['Python', 'ML', 'Recommendation'],
+    github: 'https://github.com/Izumi6/Movie-Recommendation-System',
+    category: 'AI/ML',
+  },
+  {
+    id: 'network-ids',
+    title: 'Network Intrusion Detection',
+    desc: 'ML-based cybersecurity system that monitors network traffic patterns and detects malicious intrusion attempts in real-time.',
+    tech: ['Python', 'ML', 'Cybersecurity'],
+    github: 'https://github.com/Izumi6/-Network-Intrusion-Detection-System',
+    category: 'AI + Security',
+  },
+  {
+    id: 'ai-api-monitor',
+    title: 'AI API Security Monitor',
+    desc: 'Intelligent API threat detection system that uses ML to identify anomalous API access patterns and potential security breaches.',
+    tech: ['Python', 'API Security', 'ML'],
+    github: 'https://github.com/Izumi6/ai-api-security-monitor',
+    category: 'AI + Security',
+  },
+]
+
+function ProjectCard({ project, index, hasVisual }) {
+  const ProjectComponent =
+    project.component === 'neuromorphic' ? NeuromorphicProject :
+    project.component === 'carIgnition' ? CarIgnitionCard :
+    project.component === 'spamDetector' ? SpamDetector : null
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="group relative rounded-xl bg-charcoal border border-white/5 overflow-hidden hover:border-primary/30 transition-all duration-500"
+    >
+      {/* 3D Visual (if available) */}
+      {hasVisual && ProjectComponent && (
+        <div className="relative h-[240px] bg-black/40">
+          <ProjectComponent />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent pointer-events-none" />
+        </div>
+      )}
+
+      {/* Colored top bar if no 3D visual */}
+      {!hasVisual && (
+        <div className="h-1 bg-gradient-to-r from-primary/60 via-primary/30 to-transparent" />
+      )}
+
+      <div className="relative p-6 md:p-8 z-10">
+        {/* Category Badge */}
+        <span className="inline-block px-3 py-1 text-[10px] font-mono tracking-wider uppercase text-primary/80 bg-primary/10 rounded-full mb-4">
+          {project.category}
+        </span>
+
+        <h3 className="font-poppins font-medium text-xl text-white mb-3 group-hover:text-primary transition-colors duration-300">
+          {project.title}
+        </h3>
+        <p className="text-gray-400 text-sm leading-relaxed mb-5 font-light">
+          {project.desc}
+        </p>
+
+        {/* Tech Tags */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.tech.map((t) => (
+            <span key={t} className="px-2.5 py-1 text-[11px] font-mono text-gray-400 bg-white/5 rounded-md border border-white/5">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="interactive flex items-center gap-2 px-4 py-2 text-xs font-medium text-darkBg bg-primary rounded-lg hover:bg-primary/90 transition-all duration-300"
+            >
+              <FaExternalLinkAlt className="w-3 h-3" />
+              Live Demo
+            </a>
+          )}
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="interactive flex items-center gap-2 px-4 py-2 text-xs font-medium text-gray-300 border border-white/10 rounded-lg hover:border-primary/30 hover:text-primary transition-all duration-300"
+          >
+            <FaGithub className="w-3.5 h-3.5" />
+            Source Code
+          </a>
+        </div>
+      </div>
+
+      {/* Hover Glow Effect */}
+      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+    </motion.div>
+  )
+}
 
 export default function Projects() {
   return (
@@ -67,58 +209,79 @@ export default function Projects() {
           Selected Works
         </span>
         <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
-          Showcase
+          Projects
         </h2>
+        <p className="mt-4 text-gray-400 font-light text-sm max-w-2xl mx-auto">
+          From AI research to production web apps — built, shipped, and deployed.
+        </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => {
-          const ProjectComponent =
-            project.component === 'neuromorphic' ? NeuromorphicProject :
-              project.component === 'carIgnition' ? CarIgnitionCard :
-                project.component === 'hologram' ? HologramID :
-                  project.component === 'aiCursor' ? AICursorProject :
-                    project.component === 'branding' ? BrandingSphere :
-                      project.component === 'spamDetector' ? SpamDetector : null
-
-          return (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative rounded-xl bg-charcoal border border-white/5 overflow-hidden hover:border-primary/30 transition-colors duration-500"
-            >
-              <div className="relative h-[300px] bg-black/40">
-                {ProjectComponent && <ProjectComponent />}
-
-                {/* Overlay gradient to blend 3D scene into card */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent pointer-events-none" />
-              </div>
-
-              <div className="relative p-8 z-10">
-                <h3 className="font-poppins font-medium text-xl text-white mb-3 group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                  {project.desc}
-                </p>
-
-                <div className="flex items-center justify-between border-t border-white/5 pt-4">
-                  <span className="text-xs text-primary/80 font-mono tracking-wide uppercase">
-                    {project.tech}
-                  </span>
-                </div>
-              </div>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </motion.div>
-          )
-        })}
+      {/* Featured Projects (with 3D visuals) */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-6"
+      >
+        <h3 className="text-xs font-mono tracking-[0.2em] text-primary/60 uppercase mb-6">Featured — AI / ML / Systems</h3>
+      </motion.div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {featuredProjects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} hasVisual={true} />
+        ))}
       </div>
+
+      {/* Deployed Projects (with live links) */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-6"
+      >
+        <h3 className="text-xs font-mono tracking-[0.2em] text-primary/60 uppercase mb-6">Deployed — Live on Vercel</h3>
+      </motion.div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {deployedProjects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} hasVisual={false} />
+        ))}
+      </div>
+
+      {/* AI/ML Projects (GitHub only) */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-6"
+      >
+        <h3 className="text-xs font-mono tracking-[0.2em] text-primary/60 uppercase mb-6">More AI/ML — Research & Security</h3>
+      </motion.div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {aiProjects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} hasVisual={false} />
+        ))}
+      </div>
+
+      {/* View All on GitHub */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-center"
+      >
+        <a
+          href="https://github.com/Izumi6?tab=repositories"
+          target="_blank"
+          rel="noreferrer"
+          className="interactive inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors duration-300 font-mono tracking-wide"
+        >
+          <FaGithub className="w-4 h-4" />
+          View all 22 repositories on GitHub →
+        </a>
+      </motion.div>
     </section>
   )
 }
-

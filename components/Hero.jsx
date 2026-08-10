@@ -1,8 +1,17 @@
 import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import TypingRoles from './TypingRoles'
+
+const stats = [
+  { value: '6+', label: 'AI/ML Projects' },
+  { value: '7', label: 'Deployed Apps' },
+  { value: '22', label: 'GitHub Repos' },
+]
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 pt-20">
+    <section id="home" className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 pt-28 md:pt-32">
 
       {/* Text Content */}
       <motion.div
@@ -16,10 +25,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <span className="block text-primary font-cinzel text-lg tracking-[0.2em] mb-4 uppercase">
-            CEO and Founder
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-inter text-sm tracking-wide mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <TypingRoles />
           </span>
-          <h1 className="text-5xl md:text-7xl font-poppins font-bold leading-tight mb-6">
+          <h1 className="text-5xl md:text-7xl font-poppins font-bold leading-tight mb-6 mt-4">
             <span className="block text-white">Suyash</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary bg-[length:200%_auto] animate-gradient">
               Vakhariya
@@ -31,30 +41,56 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-6 text-lg md:text-xl max-w-xl text-gray-400 leading-relaxed font-light"
+          className="mt-4 text-lg md:text-xl max-w-xl text-gray-400 leading-relaxed font-light"
         >
-          Founder of <span className="text-white font-medium">BookAHostel.in</span>. Solving real-world problems through scalable technology and innovative design.
+          I build production AI systems and ship products. From <span className="text-white font-medium">ML pipelines</span> to <span className="text-white font-medium">user-facing applications</span> — bridging research and real-world impact.
         </motion.p>
 
+        {/* Proof Stats Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mt-8 flex flex-wrap gap-6"
+        >
+          {stats.map((stat, i) => (
+            <div key={stat.label} className="flex items-center gap-3">
+              <span className="text-2xl md:text-3xl font-poppins font-bold text-primary">{stat.value}</span>
+              <span className="text-xs text-gray-500 uppercase tracking-wider leading-tight font-medium">
+                {stat.label.split(' ').map((word, j) => (
+                  <span key={j} className="block">{word}</span>
+                ))}
+              </span>
+              {i < stats.length - 1 && (
+                <div className="hidden sm:block w-px h-8 bg-white/10 ml-3" />
+              )}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-10 flex flex-wrap gap-6"
+          className="mt-10 flex flex-wrap gap-4"
         >
           <a
             href="#projects"
             className="group relative px-8 py-4 bg-primary text-darkBg font-semibold rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
           >
-            <span className="relative z-10">View Ventures</span>
+            <span className="relative z-10">View Projects</span>
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
           </a>
 
           <a
-            href="#contact"
-            className="px-8 py-4 border border-white/10 text-white rounded-full hover:bg-white/5 transition-all duration-300 hover:border-primary/50"
+            href="https://github.com/Izumi6"
+            target="_blank"
+            rel="noreferrer"
+            className="interactive flex items-center gap-2 px-8 py-4 border border-white/10 text-white rounded-full hover:bg-white/5 transition-all duration-300 hover:border-primary/50"
           >
-            Contact
+            <FaGithub className="w-5 h-5" />
+            GitHub
           </a>
         </motion.div>
 
@@ -63,15 +99,21 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-16 flex items-center gap-8 text-sm text-gray-500 font-mono tracking-wider"
+          className="mt-14 flex items-center gap-6"
         >
-          <a href="mailto:vakhariyasuyash@gmail.com" className="hover:text-primary transition-colors flex items-center gap-2">
-            <span>EMAIL</span>
-            <span className="w-1 h-1 rounded-full bg-primary" />
+          <a href="https://github.com/Izumi6" target="_blank" rel="noreferrer" className="group flex items-center gap-2 text-sm text-gray-500 font-mono tracking-wider hover:text-primary transition-colors duration-300">
+            <FaGithub className="w-4 h-4" />
+            <span>GITHUB</span>
           </a>
-          <a href="https://www.linkedin.com/in/suyashvakhariya" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
+          <span className="w-1 h-1 rounded-full bg-primary/50" />
+          <a href="https://www.linkedin.com/in/suyashvakhariya" target="_blank" rel="noreferrer" className="group flex items-center gap-2 text-sm text-gray-500 font-mono tracking-wider hover:text-primary transition-colors duration-300">
+            <FaLinkedin className="w-4 h-4" />
             <span>LINKEDIN</span>
-            <span className="w-1 h-1 rounded-full bg-primary" />
+          </a>
+          <span className="w-1 h-1 rounded-full bg-primary/50" />
+          <a href="mailto:vakhariyasuyash@gmail.com" className="group flex items-center gap-2 text-sm text-gray-500 font-mono tracking-wider hover:text-primary transition-colors duration-300">
+            <HiOutlineMail className="w-4 h-4" />
+            <span>EMAIL</span>
           </a>
         </motion.div>
       </motion.div>
@@ -102,4 +144,3 @@ export default function Hero() {
     </section>
   )
 }
-

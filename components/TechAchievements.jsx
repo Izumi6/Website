@@ -2,49 +2,56 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { HiOutlineAcademicCap, HiOutlineCpuChip, HiOutlineGlobeAlt, HiOutlineShieldCheck, HiOutlineWrenchScrewdriver, HiOutlineCodeBracketSquare } from 'react-icons/hi2'
 
 const achievements = [
   {
     id: 1,
     title: 'Neuromorphic Computing Research',
-    description: 'Published research on bio-inspired computational architectures',
-    icon: '🧠',
-    color: 'from-blue-500 to-cyan-500'
+    description: 'Developed spiking neural network architectures for bio-inspired computation — bridging neuroscience and machine learning for energy-efficient AI.',
+    icon: <HiOutlineAcademicCap className="w-8 h-8" />,
+    color: 'from-purple-500 to-pink-500',
+    metric: 'SNN Research',
   },
   {
     id: 2,
-    title: 'NFC Security Systems',
-    description: 'Developed secure authentication systems for smart devices',
-    icon: '🔐',
-    color: 'from-cyan-500 to-blue-500'
+    title: '6+ AI/ML Systems Built',
+    description: 'Shipped production ML models: spam detection, fake news classification, movie recommendation, network intrusion detection, and API security monitoring.',
+    icon: <HiOutlineCpuChip className="w-8 h-8" />,
+    color: 'from-blue-500 to-cyan-500',
+    metric: '6+ Models',
   },
   {
     id: 3,
-    title: 'Machine Learning Excellence',
-    description: 'Built advanced ML models for email classification and spam detection',
-    icon: '🤖',
-    color: 'from-purple-500 to-pink-500'
+    title: '7 Production Web Apps Deployed',
+    description: 'Designed and deployed full-stack applications on Vercel — including CloudSecure, Price Pulse, Smart Study Planner, and Edunet Dashboard.',
+    icon: <HiOutlineGlobeAlt className="w-8 h-8" />,
+    color: 'from-cyan-500 to-emerald-500',
+    metric: '7 Live Apps',
   },
   {
     id: 4,
-    title: '3D Web Development',
-    description: 'Created immersive 3D web experiences with React Three Fiber',
-    icon: '🎨',
-    color: 'from-pink-500 to-purple-500'
+    title: 'AI-Powered Security Systems',
+    description: 'Built network intrusion detection and API security monitoring systems using ML to identify threats, anomalous patterns, and zero-day attacks.',
+    icon: <HiOutlineShieldCheck className="w-8 h-8" />,
+    color: 'from-red-500 to-orange-500',
+    metric: 'Security AI',
   },
   {
     id: 5,
-    title: 'Full-Stack Development',
-    description: 'Built scalable web applications with modern tech stacks',
-    icon: '⚡',
-    color: 'from-cyan-500 to-blue-500'
+    title: 'IoT & Embedded Systems',
+    description: 'Engineered RFID-based car ignition system with encrypted identity authentication — bridging hardware (C++/Arduino) and software security.',
+    icon: <HiOutlineWrenchScrewdriver className="w-8 h-8" />,
+    color: 'from-green-500 to-emerald-500',
+    metric: 'IoT/Embedded',
   },
   {
     id: 6,
-    title: 'UI/UX Design',
-    description: 'Designed premium, futuristic interfaces with glassmorphism',
-    icon: '✨',
-    color: 'from-blue-500 to-purple-500'
+    title: 'Full-Stack Proficiency',
+    description: 'End-to-end development across React, Next.js, Node.js, Python, TypeScript, and C++ — from ML backends to interactive 3D frontends.',
+    icon: <HiOutlineCodeBracketSquare className="w-8 h-8" />,
+    color: 'from-amber-500 to-yellow-500',
+    metric: '22 Repos',
   },
 ]
 
@@ -53,15 +60,20 @@ export default function TechAchievements() {
 
   return (
     <section id="achievements" className="mt-32 md:mt-40">
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-poppins font-semibold mb-12 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        className="text-center mb-16"
       >
-        Tech Achievements
-      </motion.h2>
+        <span className="block text-primary font-cinzel text-sm tracking-[0.3em] mb-4 uppercase">
+          Track Record
+        </span>
+        <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
+          Experience & Impact
+        </h2>
+      </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {achievements.map((achievement, index) => (
@@ -77,21 +89,28 @@ export default function TechAchievements() {
           >
             {/* Gradient background on hover */}
             <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 -z-10`} />
-            
+
             {/* Glow effect */}
             <div className={`absolute -inset-1 bg-gradient-to-r ${achievement.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-20`} />
-            
-            {/* Icon */}
-            <div className="text-5xl mb-4">{achievement.icon}</div>
-            
+
+            {/* Metric Badge */}
+            <div className="flex items-center justify-between mb-4">
+              <div className="text-primary">
+                {achievement.icon}
+              </div>
+              <span className="px-3 py-1 text-[10px] font-mono tracking-wider uppercase text-primary/70 bg-primary/10 rounded-full">
+                {achievement.metric}
+              </span>
+            </div>
+
             {/* Content */}
-            <h3 className="font-poppins font-semibold text-xl md:text-2xl mb-3 text-gray-100 group-hover:text-primary transition-colors">
+            <h3 className="font-poppins font-semibold text-lg md:text-xl mb-3 text-gray-100 group-hover:text-primary transition-colors">
               {achievement.title}
             </h3>
-            <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+            <p className="text-gray-400 leading-relaxed text-sm font-light">
               {achievement.description}
             </p>
-            
+
             {/* Shine effect */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </motion.div>
@@ -100,6 +119,3 @@ export default function TechAchievements() {
     </section>
   )
 }
-
-
-
