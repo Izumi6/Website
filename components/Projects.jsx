@@ -43,6 +43,15 @@ const featuredProjects = [
 
 const deployedProjects = [
   {
+    id: 'worksphere',
+    title: 'WorkSphere OS',
+    desc: 'Enterprise workflow & team management platform with task tracking, internal messaging, knowledge base, scheduling, and role-based user management — powered by JWT auth and MongoDB.',
+    tech: ['Node.js', 'Express', 'MongoDB', 'JWT'],
+    github: 'https://github.com/Izumi6/WORKSPHERE',
+    live: 'https://worksphere.vercel.app',
+    category: 'Full-Stack SaaS',
+  },
+  {
     id: 'cloud-secure',
     title: 'CloudSecure',
     desc: 'Enterprise cloud security platform with real-time threat monitoring, compliance dashboards, and automated incident response workflows.',

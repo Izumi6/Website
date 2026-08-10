@@ -5,7 +5,7 @@ import TypingRoles from './TypingRoles'
 
 const stats = [
   { value: '6+', label: 'AI/ML Projects' },
-  { value: '7', label: 'Deployed Apps' },
+  { value: '8', label: 'Deployed Apps' },
   { value: '22', label: 'GitHub Repos' },
 ]
 
