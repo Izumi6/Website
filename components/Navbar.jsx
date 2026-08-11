@@ -160,7 +160,7 @@ export default function Navbar() {
                 </svg>
               </a>
               <a
-                href="/resume.pdf"
+                href="/Suyash_Vakhariya_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="interactive px-5 py-2 text-sm font-medium text-primary border border-primary/40 rounded-full hover:bg-primary/10 hover:border-primary/70 transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.15)]"
@@ -254,7 +254,7 @@ export default function Navbar() {
                   </svg>
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/Suyash_Vakhariya_Resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="px-6 py-3 text-sm font-medium text-primary border border-primary/40 rounded-full hover:bg-primary/10"
