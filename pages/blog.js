@@ -3,69 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ParticlesBackground from '../components/ParticlesBackground'
 import { HiOutlineArrowLeft, HiOutlineClock, HiOutlineCalendar } from 'react-icons/hi2'
-
-const blogPosts = [
-  {
-    id: 'spiking-neural-networks',
-    title: 'Building Spiking Neural Networks: A Practical Guide',
-    excerpt: 'How bio-inspired computing architectures can achieve energy-efficient AI — from theory to implementation with Python and TensorFlow.',
-    date: '2026-07-15',
-    readTime: '8 min read',
-    category: 'AI/ML Research',
-    tags: ['SNN', 'Neuromorphic', 'TensorFlow', 'Python'],
-    featured: true,
-  },
-  {
-    id: 'ml-spam-detector',
-    title: 'How I Built an ML-Powered Email Spam Detector',
-    excerpt: 'A deep dive into NLP preprocessing, feature engineering, and probabilistic classification — achieving high-accuracy spam detection from scratch.',
-    date: '2026-06-28',
-    readTime: '6 min read',
-    category: 'Machine Learning',
-    tags: ['NLP', 'Scikit-learn', 'Classification', 'Python'],
-    featured: true,
-  },
-  {
-    id: 'shipping-7-apps-vercel',
-    title: 'From Idea to Deployment: Shipping 7 Apps on Vercel',
-    excerpt: 'Lessons learned from building and deploying 7 production web applications — architecture decisions, CI/CD workflows, and performance optimization.',
-    date: '2026-06-10',
-    readTime: '10 min read',
-    category: 'Engineering',
-    tags: ['Vercel', 'Next.js', 'React', 'DevOps'],
-    featured: false,
-  },
-  {
-    id: 'rfid-security-systems',
-    title: 'RFID Security Systems: Bridging Hardware and Software',
-    excerpt: 'Designing an NFC-based car ignition system with encrypted identity authentication — from Arduino prototyping to secure embedded C++ firmware.',
-    date: '2026-05-22',
-    readTime: '7 min read',
-    category: 'IoT / Embedded',
-    tags: ['RFID', 'NFC', 'C++', 'Arduino', 'Security'],
-    featured: false,
-  },
-  {
-    id: 'fake-news-detection-nlp',
-    title: 'Fighting Misinformation with Machine Learning',
-    excerpt: 'Building a fake news detection pipeline using NLP — text vectorization, model selection, and the challenges of training on real-world data.',
-    date: '2026-05-05',
-    readTime: '9 min read',
-    category: 'AI/ML',
-    tags: ['NLP', 'Fake News', 'Python', 'ML'],
-    featured: false,
-  },
-  {
-    id: 'network-intrusion-detection',
-    title: 'ML-Based Network Intrusion Detection: Architecture & Lessons',
-    excerpt: 'How I built a real-time network traffic analyzer that detects malicious patterns — from data preprocessing to model deployment and evaluation.',
-    date: '2026-04-18',
-    readTime: '8 min read',
-    category: 'AI + Security',
-    tags: ['Cybersecurity', 'ML', 'Python', 'Network Security'],
-    featured: false,
-  },
-]
+import { blogPosts } from '../data/blogPosts'
 
 function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString('en-US', {
@@ -138,8 +76,9 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="group relative rounded-2xl bg-charcoal/50 border border-white/5 overflow-hidden hover:border-primary/30 transition-all duration-500 cursor-pointer"
+              className="group relative rounded-2xl bg-charcoal/50 border border-white/5 overflow-hidden hover:border-primary/30 transition-all duration-500"
             >
+              <Link href={`/blog/${post.id}`} className="block">
               {/* Gold accent bar */}
               <div className="h-1 bg-gradient-to-r from-primary via-primary/60 to-transparent" />
 
@@ -176,8 +115,10 @@ export default function Blog() {
                     <HiOutlineClock className="w-3.5 h-3.5" />
                     {post.readTime}
                   </span>
+                  <span className="text-primary text-xs font-medium">Read Article →</span>
                 </div>
               </div>
+              </Link>
 
               {/* Hover glow */}
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -202,8 +143,9 @@ export default function Blog() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.08 }}
-              className="group relative flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-primary/20 hover:bg-white/[0.04] transition-all duration-300 cursor-pointer"
+              className="group relative flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-primary/20 hover:bg-white/[0.04] transition-all duration-300"
             >
+              <Link href={`/blog/${post.id}`} className="flex flex-col md:flex-row md:items-center gap-4 flex-1">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="px-2.5 py-0.5 text-[10px] font-mono tracking-wider uppercase text-primary/70 bg-primary/10 rounded-full">
@@ -227,6 +169,7 @@ export default function Blog() {
                 <HiOutlineCalendar className="w-3.5 h-3.5" />
                 {formatDate(post.date)}
               </div>
+              </Link>
             </motion.article>
           ))}
         </div>
