@@ -40,13 +40,6 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 pt-28 md:pt-32">
 
-      {/* Floating geometric accents */}
-      <div className="absolute top-20 left-0 w-64 h-64 opacity-[0.03] pointer-events-none">
-        <div className="w-full h-full border border-primary/30 rounded-full animate-float-slow" />
-      </div>
-      <div className="absolute bottom-20 right-10 w-48 h-48 opacity-[0.04] pointer-events-none">
-        <div className="w-full h-full border border-dashed border-white/20 rounded-full animate-float" style={{ animationDelay: '2s' }} />
-      </div>
       {/* Text Content */}
       <motion.div
         className="z-20 flex-1 order-2 md:order-1"
@@ -63,28 +56,42 @@ export default function Hero() {
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <TypingRoles />
           </span>
-          <h1 className="text-5xl md:text-7xl font-poppins font-bold leading-tight mb-6 mt-4">
-            <motion.span
-              className="block text-white"
+
+          {/* Name in elegant calligraphic script */}
+          <div className="relative mt-4 mb-6">
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
+              className="leading-[1.1]"
             >
-              Suyash
-            </motion.span>
-            <motion.span
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary bg-[length:300%_auto]"
-              initial={{ opacity: 0, y: 20, backgroundPosition: '0% 50%' }}
-              animate={{ opacity: 1, y: 0, backgroundPosition: '100% 50%' }}
-              transition={{
-                opacity: { delay: 0.5, duration: 0.6 },
-                y: { delay: 0.5, duration: 0.6 },
-                backgroundPosition: { duration: 4, repeat: Infinity, repeatType: 'reverse', ease: 'linear' },
-              }}
-            >
-              Vakhariya
-            </motion.span>
-          </h1>
+              <span
+                className="block text-[3.5rem] md:text-[5.5rem] lg:text-[6.5rem] text-white"
+                style={{ fontFamily: "'Great Vibes', cursive" }}
+              >
+                Suyash
+              </span>
+              <motion.span
+                className="block text-[3.5rem] md:text-[5.5rem] lg:text-[6.5rem] text-transparent bg-clip-text bg-gradient-to-r from-primary via-white/90 to-primary bg-[length:300%_auto]"
+                style={{ fontFamily: "'Great Vibes', cursive" }}
+                animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+              >
+                Vakhariya
+              </motion.span>
+            </motion.h1>
+
+            {/* Decorative underline */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.8, duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="h-[1px] w-48 md:w-72 bg-gradient-to-r from-primary/60 via-primary/30 to-transparent origin-left mt-2"
+            />
+
+            {/* Glow behind name */}
+            <div className="absolute -inset-6 bg-primary/[0.03] blur-3xl rounded-full -z-10" />
+          </div>
         </motion.div>
 
         <motion.p
