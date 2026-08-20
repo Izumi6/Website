@@ -1,18 +1,52 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef, useEffect, useState } from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import TypingRoles from './TypingRoles'
 
 const stats = [
-  { value: '6+', label: 'AI/ML Projects' },
-  { value: '8', label: 'Deployed Apps' },
-  { value: '22', label: 'GitHub Repos' },
+  { value: 6, suffix: '+', label: 'AI/ML Projects' },
+  { value: 8, suffix: '', label: 'Deployed Apps' },
+  { value: 22, suffix: '', label: 'GitHub Repos' },
 ]
+
+function AnimatedCounter({ value, suffix = '' }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (!isInView) return
+    let start = 0
+    const end = value
+    const duration = 1500
+    const stepTime = duration / end
+    const timer = setInterval(() => {
+      start++
+      setCount(start)
+      if (start >= end) clearInterval(timer)
+    }, stepTime)
+    return () => clearInterval(timer)
+  }, [isInView, value])
+
+  return (
+    <span ref={ref} className="text-2xl md:text-3xl font-poppins font-bold text-primary tabular-nums">
+      {count}{suffix}
+    </span>
+  )
+}
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 pt-28 md:pt-32">
 
+      {/* Floating geometric accents */}
+      <div className="absolute top-20 left-0 w-64 h-64 opacity-[0.03] pointer-events-none">
+        <div className="w-full h-full border border-primary/30 rounded-full animate-float-slow" />
+      </div>
+      <div className="absolute bottom-20 right-10 w-48 h-48 opacity-[0.04] pointer-events-none">
+        <div className="w-full h-full border border-dashed border-white/20 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+      </div>
       {/* Text Content */}
       <motion.div
         className="z-20 flex-1 order-2 md:order-1"
@@ -30,10 +64,26 @@ export default function Hero() {
             <TypingRoles />
           </span>
           <h1 className="text-5xl md:text-7xl font-poppins font-bold leading-tight mb-6 mt-4">
-            <span className="block text-white">Suyash</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary bg-[length:200%_auto] animate-gradient">
+            <motion.span
+              className="block text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              Suyash
+            </motion.span>
+            <motion.span
+              className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary bg-[length:300%_auto]"
+              initial={{ opacity: 0, y: 20, backgroundPosition: '0% 50%' }}
+              animate={{ opacity: 1, y: 0, backgroundPosition: '100% 50%' }}
+              transition={{
+                opacity: { delay: 0.5, duration: 0.6 },
+                y: { delay: 0.5, duration: 0.6 },
+                backgroundPosition: { duration: 4, repeat: Infinity, repeatType: 'reverse', ease: 'linear' },
+              }}
+            >
               Vakhariya
-            </span>
+            </motion.span>
           </h1>
         </motion.div>
 
@@ -55,7 +105,7 @@ export default function Hero() {
         >
           {stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center gap-3">
-              <span className="text-2xl md:text-3xl font-poppins font-bold text-primary">{stat.value}</span>
+              <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               <span className="text-xs text-gray-500 uppercase tracking-wider leading-tight font-medium">
                 {stat.label.split(' ').map((word, j) => (
                   <span key={j} className="block">{word}</span>
@@ -77,17 +127,19 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group relative px-8 py-4 bg-primary text-darkBg font-semibold rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="group relative px-8 py-4 bg-primary text-darkBg font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]"
           >
             <span className="relative z-10">View Projects</span>
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+            {/* Shimmer effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </a>
 
           <a
             href="https://github.com/Izumi6"
             target="_blank"
             rel="noreferrer"
-            className="interactive flex items-center gap-2 px-8 py-4 border border-white/10 text-white rounded-full hover:bg-white/5 transition-all duration-300 hover:border-primary/50"
+            className="interactive flex items-center gap-2 px-8 py-4 border border-white/10 text-white rounded-full hover:bg-white/5 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]"
           >
             <FaGithub className="w-5 h-5" />
             GitHub
@@ -126,8 +178,30 @@ export default function Hero() {
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
         <div className="relative w-72 h-72 md:w-[400px] md:h-[400px]">
-          {/* Cinematic Glow Behind */}
-          <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-110 animate-pulse" />
+          {/* Multi-layer cinematic glow */}
+          <motion.div
+            animate={{
+              scale: [1.1, 1.2, 1.1],
+              opacity: [0.15, 0.25, 0.15],
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"
+          />
+          <motion.div
+            animate={{
+              scale: [1.2, 1.3, 1.2],
+              opacity: [0.05, 0.1, 0.05],
+            }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            className="absolute inset-0 bg-white/5 blur-[80px] rounded-full"
+          />
+
+          {/* Rotating ring accent */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            className="absolute -inset-4 rounded-full border border-dashed border-primary/10"
+          />
 
           <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/5 shadow-2xl shadow-black/50 ring-1 ring-white/10">
             <img

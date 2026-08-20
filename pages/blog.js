@@ -24,16 +24,54 @@ export default function Blog() {
         <meta name="description" content="Technical articles on AI/ML, neuromorphic computing, full-stack development, and building production systems — by Suyash Vakhariya." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
+        <link rel="canonical" href="https://suyashvakhariya.com/blog" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Blog — Suyash Vakhariya | AI Engineer" />
         <meta property="og:description" content="Technical articles on AI/ML, neuromorphic computing, and building production systems." />
         <meta property="og:image" content="https://suyashvakhariya.com/images/suyash-hero-portrait.jpg" />
+
+        {/* Elegant serif font for the name */}
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
       </Head>
 
       <ParticlesBackground />
 
       <main className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 md:pt-36 pb-20">
+
+        {/* Elegant Name Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
+          <div className="relative inline-block">
+            <h2
+              className="text-3xl md:text-5xl lg:text-6xl tracking-wide text-white/90"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500, fontStyle: 'italic' }}
+            >
+              Suyash Vakhariya
+            </h2>
+            {/* Decorative underline */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="mt-3 mx-auto h-[1px] w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent origin-center"
+            />
+            {/* Subtle glow */}
+            <div className="absolute -inset-8 bg-primary/5 blur-3xl rounded-full -z-10 opacity-50" />
+          </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="mt-4 text-sm tracking-[0.25em] uppercase text-gray-500 font-light"
+          >
+            Thoughts on AI, Engineering & Research
+          </motion.p>
+        </motion.div>
 
         {/* Back Link + Header */}
         <motion.div

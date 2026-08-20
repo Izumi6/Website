@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { HiOutlineCpuChip, HiOutlineRocketLaunch, HiOutlineCodeBracket, HiOutlineUserGroup } from 'react-icons/hi2'
+import SectionHeading from './SectionHeading'
 
 const whatIDo = [
   {
@@ -26,28 +27,15 @@ const whatIDo = [
 
 export default function About() {
   return (
-    <section id="about" className="mt-32 md:mt-40">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-16"
-      >
-        <span className="block text-primary font-cinzel text-sm tracking-[0.3em] mb-4 uppercase">
-          Who I Am
-        </span>
-        <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
-          About
-        </h2>
-      </motion.div>
+    <section id="about" className="mt-8 md:mt-12">
+      <SectionHeading label="Who I Am" title="About" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="relative p-8 md:p-12 rounded-3xl bg-charcoal/30 border border-white/5 backdrop-blur-xl shadow-2xl"
+        className="relative p-8 md:p-12 rounded-3xl glass-card shine-sweep"
       >
         {/* Subtle background glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10" />
@@ -74,9 +62,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-            className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-primary/20 hover:bg-white/[0.05] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-primary/20 hover:bg-white/[0.05] transition-all duration-300 shine-sweep gradient-border"
           >
-            <div className="text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-primary mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] transition-all duration-300">
               {item.icon}
             </div>
             <h3 className="font-poppins font-medium text-white text-sm mb-2">{item.title}</h3>

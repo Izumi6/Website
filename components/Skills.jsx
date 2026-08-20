@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { SiPython, SiTensorflow, SiScikitlearn, SiJupyter, SiReact, SiNextdotjs, SiNodedotjs, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiThreedotjs, SiDocker, SiVercel, SiAmazonwebservices, SiPostgresql, SiArduino, SiGit } from 'react-icons/si'
 import { HiOutlineCpuChip, HiOutlineShieldCheck, HiOutlineChartBar, HiOutlineCog6Tooth } from 'react-icons/hi2'
 import { TbBrain, TbApi } from 'react-icons/tb'
+import SectionHeading from './SectionHeading'
 
 const skillCategories = [
   {
@@ -69,21 +70,8 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="mt-32 md:mt-40">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-16"
-      >
-        <span className="block text-primary font-cinzel text-sm tracking-[0.3em] mb-4 uppercase">
-          Technical Stack
-        </span>
-        <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
-          Skills & Technologies
-        </h2>
-      </motion.div>
+    <section id="skills" className="mt-8 md:mt-12">
+      <SectionHeading label="Technical Stack" title="Skills & Technologies" />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillCategories.map((category, catIndex) => (
@@ -92,15 +80,28 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-            className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-xl hover:border-primary/20 transition-all duration-300 overflow-hidden"
+            transition={{ duration: 0.5, delay: catIndex * 0.08 }}
+            whileHover={{ y: -3 }}
+            className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-xl hover:border-primary/20 transition-all duration-300 overflow-hidden shine-sweep"
           >
             {/* Background gradient on hover */}
             <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 -z-10`} />
 
             {/* Header */}
             <div className="flex items-center gap-3 mb-5">
-              <div className="text-primary">{category.icon}</div>
+              <div className="relative">
+                <div className="text-primary group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.4)] transition-all duration-300">
+                  {category.icon}
+                </div>
+                {/* Orbiting dot */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                  className="absolute -inset-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                >
+                  <div className="absolute top-0 left-1/2 w-1 h-1 rounded-full bg-primary/50" />
+                </motion.div>
+              </div>
               <h3 className="font-poppins font-medium text-white text-base">{category.title}</h3>
             </div>
 
@@ -109,13 +110,13 @@ export default function Skills() {
               {category.skills.map((skill, skillIndex) => (
                 <motion.div
                   key={skill.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: catIndex * 0.1 + skillIndex * 0.05 }}
+                  transition={{ duration: 0.3, delay: catIndex * 0.08 + skillIndex * 0.04 }}
                   className="interactive flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.04] border border-white/5 hover:border-primary/30 hover:bg-white/[0.08] transition-all duration-200 group/skill"
                 >
-                  <span className="text-gray-500 group-hover/skill:text-primary transition-colors duration-200">
+                  <span className="text-gray-500 group-hover/skill:text-primary group-hover/skill:drop-shadow-[0_0_6px_rgba(212,175,55,0.3)] transition-all duration-200">
                     {skill.icon}
                   </span>
                   <span className="text-xs font-medium text-gray-300 group-hover/skill:text-white transition-colors duration-200">
@@ -124,9 +125,6 @@ export default function Skills() {
                 </motion.div>
               ))}
             </div>
-
-            {/* Shine effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </motion.div>
         ))}
       </div>

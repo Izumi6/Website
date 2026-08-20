@@ -1,14 +1,24 @@
+# Standard crawlers
 User-agent: *
 Allow: /
+Disallow: /_next/
+Disallow: /api/
 
 Sitemap: https://suyashvakhariya.com/sitemap.xml
+Host: https://suyashvakhariya.com
 
+# Google
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bing
 User-agent: Bingbot
 Allow: /
 
+# AI/LLM Crawlers (GEO — Generative Engine Optimization)
 User-agent: GPTBot
 Allow: /
 
@@ -22,4 +32,25 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Amazonbot
 Allow: /

@@ -608,7 +608,311 @@ As LLM agents move from single-turn chatbots to **autonomous systems** that oper
 
 ---
 
+
 *By Suyash Vakhariya and Asmita Ipper*
     `,
   },
+  {
+    id: 'cloud-security-dashboard-react',
+    title: 'Building a Cloud Security Dashboard with React',
+    excerpt: 'How I designed and built CloudSecure — a real-time cloud security monitoring platform with threat detection, compliance tracking, and automated incident response.',
+    date: '2026-08-05',
+    readTime: '9 min read',
+    category: 'Full-Stack',
+    tags: ['React', 'Cloud Security', 'Dashboard', 'JavaScript'],
+    featured: false,
+    content: `
+## The Problem: Cloud Security is Complex
+
+Organizations using AWS, Azure, or GCP face a constant stream of security challenges:
+- **Misconfigured resources** (the #1 cause of cloud breaches)
+- **Unauthorized access** attempts
+- **Compliance violations** (SOC 2, HIPAA, PCI DSS)
+- **Anomalous network traffic**
+
+I built CloudSecure to provide a single-pane-of-glass view of cloud security posture.
+
+## Architecture Overview
+
+\`\`\`
+Frontend (React SPA)
+    ↓ REST API calls
+Dashboard Service
+    ├── Threat Monitor (real-time alerts)
+    ├── Compliance Checker (policy engine)
+    ├── Incident Manager (workflow automation)
+    └── Analytics Engine (trend analysis)
+\`\`\`
+
+## Key Features
+
+### 1. Real-Time Threat Monitoring
+
+The threat dashboard displays live security events with severity-based color coding:
+
+\`\`\`javascript
+const SEVERITY_COLORS = {
+  critical: 'bg-red-500',
+  high: 'bg-orange-500',
+  medium: 'bg-yellow-500',
+  low: 'bg-blue-500',
+  info: 'bg-gray-500',
+}
+
+function ThreatCard({ threat }) {
+  return (
+    <div className={\`rounded-lg border p-4 \${SEVERITY_COLORS[threat.severity]}/10 border-\${SEVERITY_COLORS[threat.severity]}/30\`}>
+      <h3>{threat.title}</h3>
+      <p>{threat.description}</p>
+      <span className="text-xs">{threat.timestamp}</span>
+    </div>
+  )
+}
+\`\`\`
+
+### 2. Compliance Dashboard
+
+The compliance module tracks adherence to security frameworks:
+
+| Framework | What We Track |
+|-----------|--------------|
+| SOC 2 | Access controls, encryption, monitoring |
+| HIPAA | PHI protection, audit trails |
+| PCI DSS | Cardholder data security |
+| CIS Benchmarks | Infrastructure configuration |
+
+Each framework has a compliance score (0-100%) calculated from individual control checks.
+
+### 3. Incident Response Workflows
+
+When a critical threat is detected, CloudSecure triggers automated response workflows:
+
+1. **Alert** — Notification sent to security team
+2. **Triage** — Auto-classify severity based on rules
+3. **Contain** — Suggest containment actions
+4. **Investigate** — Provide context and related events
+5. **Resolve** — Track resolution and generate report
+
+### 4. Analytics & Trends
+
+The analytics engine provides:
+- **Threat volume trends** (7/30/90 day views)
+- **Top attack vectors** breakdown
+- **Geographic distribution** of threats
+- **Mean time to detection** (MTTD) and **mean time to response** (MTTR)
+
+## Design Decisions
+
+### Why React (Not Next.js)?
+
+CloudSecure is a **SPA dashboard**, not a content site. It doesn't need:
+- Server-side rendering (it's behind auth)
+- SEO optimization (it's a private tool)
+- Static generation (all data is dynamic)
+
+A client-side React app with React Router was the right choice for this use case.
+
+### State Management
+
+I used React Context + useReducer for global state instead of Redux:
+
+\`\`\`javascript
+const SecurityContext = createContext()
+
+function securityReducer(state, action) {
+  switch (action.type) {
+    case 'SET_THREATS':
+      return { ...state, threats: action.payload }
+    case 'UPDATE_COMPLIANCE':
+      return { ...state, compliance: action.payload }
+    case 'ADD_INCIDENT':
+      return { ...state, incidents: [...state.incidents, action.payload] }
+    default:
+      return state
+  }
+}
+\`\`\`
+
+### Visualization
+
+For charts and graphs, I used lightweight libraries:
+- **Recharts** for line/bar charts (threat trends)
+- **Custom SVG** for the compliance donut charts
+- **CSS animations** for real-time activity indicators
+
+## Deployment
+
+CloudSecure is deployed on Vercel at [cloud-secure.vercel.app](https://cloud-secure.vercel.app).
+
+Key deployment considerations:
+- **Environment variables** for API keys (never committed to Git)
+- **Edge functions** for API proxying
+- **Automatic HTTPS** via Vercel
+
+## Lessons Learned
+
+1. **Security dashboards need to be fast** — If the security tool is slow, people won't use it
+2. **Color-coding is critical** — Severity levels must be immediately visually distinguishable
+3. **Real-time updates matter** — Stale security data is dangerous
+4. **Keep it actionable** — Every alert should suggest a next step
+
+---
+
+*Live demo: [cloud-secure.vercel.app](https://cloud-secure.vercel.app) | Source: [GitHub](https://github.com/Izumi6/cloud-secure)*
+    `,
+  },
+  {
+    id: 'network-intrusion-detection-ml',
+    title: 'Network Intrusion Detection with Machine Learning: A Complete Guide',
+    excerpt: 'How to build an ML-based network intrusion detection system (NIDS) using Python — from feature engineering on network traffic data to real-time anomaly classification.',
+    date: '2026-07-25',
+    readTime: '10 min read',
+    category: 'AI + Security',
+    tags: ['Cybersecurity', 'ML', 'Python', 'Network Security'],
+    featured: false,
+    content: `
+## Why ML for Network Security?
+
+Traditional intrusion detection systems (IDS) rely on **signature-based detection** — they match network traffic against known attack patterns. This approach has a critical flaw: it can't detect **zero-day attacks** (new, previously unseen threats).
+
+Machine learning offers a solution: **anomaly-based detection**. By learning what "normal" network traffic looks like, ML models can flag deviations — even attacks that have never been seen before.
+
+## The Dataset: NSL-KDD
+
+I used the NSL-KDD dataset, an improved version of the original KDD Cup 1999 dataset. It contains:
+- **125,973 training records** and **22,544 test records**
+- **41 features** per connection record
+- **5 categories**: Normal, DoS, Probe, R2L, U2R
+
+Key features include:
+| Feature | Description |
+|---------|-------------|
+| duration | Connection length in seconds |
+| protocol_type | TCP, UDP, or ICMP |
+| service | Network service (HTTP, FTP, etc.) |
+| flag | Connection status |
+| src_bytes | Data bytes from source |
+| dst_bytes | Data bytes from destination |
+| logged_in | Login status (1/0) |
+
+## The ML Pipeline
+
+\`\`\`
+Raw Network Data → Feature Engineering → Normalization → Model Training → Real-Time Classification
+\`\`\`
+
+### Step 1: Feature Engineering
+
+Network data requires careful preprocessing:
+
+\`\`\`python
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+
+# Encode categorical features
+le = LabelEncoder()
+for col in ['protocol_type', 'service', 'flag']:
+    df[col] = le.fit_transform(df[col])
+
+# Normalize numerical features
+scaler = StandardScaler()
+numerical_cols = df.select_dtypes(include=['float64', 'int64']).columns
+df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
+\`\`\`
+
+### Step 2: Feature Selection
+
+With 41 features, dimensionality reduction is important:
+
+\`\`\`python
+from sklearn.feature_selection import SelectKBest, chi2
+
+# Select top 20 most informative features
+selector = SelectKBest(chi2, k=20)
+X_selected = selector.fit_transform(X, y)
+
+# Most important features:
+# src_bytes, dst_bytes, logged_in, count, srv_count,
+# same_srv_rate, dst_host_srv_count, dst_host_same_srv_rate
+\`\`\`
+
+### Step 3: Model Comparison
+
+I evaluated multiple classifiers:
+
+| Model | Accuracy | Precision | Recall | F1 | Training Time |
+|-------|----------|-----------|--------|-----|---------------|
+| Random Forest | 99.2% | 0.99 | 0.99 | 0.99 | 12s |
+| Decision Tree | 98.7% | 0.98 | 0.98 | 0.98 | 2s |
+| SVM | 97.4% | 0.97 | 0.96 | 0.96 | 45s |
+| KNN | 97.1% | 0.97 | 0.96 | 0.96 | 1s* |
+| Logistic Reg | 92.3% | 0.91 | 0.90 | 0.90 | 3s |
+
+*KNN inference is slow at scale despite fast "training"
+
+**Winner: Random Forest** — Best accuracy, fast training, and interpretable feature importances.
+
+### Step 4: Attack Type Classification
+
+Beyond binary (normal vs. attack), the model classifies attack types:
+
+\`\`\`python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+rf = RandomForestClassifier(
+    n_estimators=100,
+    max_depth=20,
+    min_samples_split=5,
+    n_jobs=-1,
+    random_state=42
+)
+rf.fit(X_train, y_train)
+
+print(classification_report(y_test, rf.predict(X_test)))
+\`\`\`
+
+**Per-class results:**
+- **Normal**: 99.5% precision
+- **DoS**: 99.8% precision (easiest to detect — high volume)
+- **Probe**: 97.2% precision (port scanning, etc.)
+- **R2L**: 85.3% precision (remote to local — harder, fewer examples)
+- **U2R**: 78.1% precision (user to root — rarest, most dangerous)
+
+## Key Challenges
+
+### 1. Class Imbalance
+U2R attacks are extremely rare (<1% of data). I addressed this with:
+- **SMOTE** (Synthetic Minority Over-sampling)
+- **Class weights** in Random Forest
+- **Evaluation by precision/recall** rather than just accuracy
+
+### 2. Feature Drift
+Network traffic patterns change over time. A model trained on 2024 traffic may not work well in 2026. Continuous retraining is essential.
+
+### 3. False Positives
+In production, false positives are expensive — they cause alert fatigue. I tuned the decision threshold to minimize false positive rate while maintaining >95% detection rate.
+
+## Real-World Considerations
+
+For production deployment, you'd need:
+1. **Packet capture** — Tools like tcpdump or Wireshark to collect raw traffic
+2. **Feature extraction** — Convert raw packets to the 41-feature format
+3. **Streaming inference** — Process packets in real-time (not batch)
+4. **Alert integration** — Feed detections into SIEM systems (Splunk, ELK)
+5. **Model monitoring** — Track prediction confidence and retrain on drift
+
+## Impact
+
+Network intrusion detection is a $6.2 billion industry (2025). ML-based approaches are increasingly replacing signature-based systems because:
+- They detect zero-day attacks
+- They adapt to new traffic patterns
+- They reduce false positive rates with proper tuning
+
+---
+
+*Source code: [GitHub](https://github.com/Izumi6/-Network-Intrusion-Detection-System)*
+    `,
+  },
 ]
+

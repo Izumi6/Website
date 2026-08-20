@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { HiOutlineDocumentText, HiOutlineAcademicCap, HiOutlineArrowTopRightOnSquare, HiOutlineBookOpen } from 'react-icons/hi2'
+import SectionHeading from './SectionHeading'
 
 const paper = {
   title: 'FAMM: Future-Aware Adaptive Memory Management Framework for Long-Term Autonomous LLM Agents',
@@ -36,24 +37,12 @@ const researchHighlights = [
 
 export default function Research() {
   return (
-    <section id="research" className="mt-32 md:mt-40">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-16"
-      >
-        <span className="block text-primary font-cinzel text-sm tracking-[0.3em] mb-4 uppercase">
-          Published Work
-        </span>
-        <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
-          Research
-        </h2>
-        <p className="mt-4 text-gray-400 font-light text-sm max-w-2xl mx-auto">
-          Peer-reviewed contributions to AI and machine learning research.
-        </p>
-      </motion.div>
+    <section id="research" className="mt-8 md:mt-12">
+      <SectionHeading
+        label="Published Work"
+        title="Research"
+        description="Peer-reviewed contributions to AI and machine learning research."
+      />
 
       {/* Featured Paper Card */}
       <motion.div
@@ -66,7 +55,7 @@ export default function Research() {
         {/* Ambient glow behind card */}
         <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-transparent to-primary/5 blur-3xl rounded-full -z-10" />
 
-        <div className="relative bg-charcoal/50 border border-primary/15 rounded-3xl backdrop-blur-xl overflow-hidden">
+        <div className="relative bg-charcoal/50 border border-primary/15 rounded-3xl backdrop-blur-xl overflow-hidden shine-sweep">
           {/* Gold accent top bar */}
           <div className="h-1 bg-gradient-to-r from-primary via-primary/60 to-transparent" />
 
@@ -169,9 +158,9 @@ export default function Research() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-            className="group relative p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-primary/15 transition-all duration-300"
+            className="group relative p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-primary/15 transition-all duration-300 gradient-border"
           >
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3 text-primary group-hover:bg-primary/20 transition-colors duration-300">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3 text-primary group-hover:bg-primary/20 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] transition-all duration-300">
               <HiOutlineBookOpen className="w-4 h-4" />
             </div>
             <h4 className="font-poppins font-medium text-white text-sm mb-1.5">{item.label}</h4>
