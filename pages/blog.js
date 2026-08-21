@@ -31,8 +31,6 @@ export default function Blog() {
         <meta property="og:description" content="Technical articles on AI/ML, neuromorphic computing, and building production systems." />
         <meta property="og:image" content="https://suyashvakhariya.com/images/suyash-hero-portrait.jpg" />
 
-        {/* Elegant serif font for the name */}
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
       </Head>
 
       <ParticlesBackground />
@@ -49,7 +47,7 @@ export default function Blog() {
           <div className="relative inline-block">
             <h2
               className="text-3xl md:text-5xl lg:text-6xl tracking-wide text-white/90"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500, fontStyle: 'italic' }}
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontStyle: 'italic', letterSpacing: '0.02em' }}
             >
               Suyash Vakhariya
             </h2>
