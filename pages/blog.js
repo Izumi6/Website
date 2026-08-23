@@ -47,7 +47,7 @@ export default function Blog() {
           <div className="relative inline-block">
             <h2
               className="text-3xl md:text-5xl lg:text-6xl tracking-wide text-white/90"
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontStyle: 'italic', letterSpacing: '0.02em' }}
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
             >
               Suyash Vakhariya
             </h2>

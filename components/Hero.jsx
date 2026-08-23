@@ -67,13 +67,13 @@ export default function Hero() {
             >
               <span
                 className="block text-[3.5rem] md:text-[5.5rem] lg:text-[6.5rem] text-white"
-                style={{ fontFamily: "'Great Vibes', cursive" }}
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
               >
                 Suyash
               </span>
               <motion.span
                 className="block text-[3.5rem] md:text-[5.5rem] lg:text-[6.5rem] text-transparent bg-clip-text bg-gradient-to-r from-primary via-white/90 to-primary bg-[length:300%_auto]"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontStyle: 'italic', letterSpacing: '0.02em' }}
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
                 animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
               >
