@@ -4,8 +4,8 @@ Allow: /
 Disallow: /_next/
 Disallow: /api/
 
-Sitemap: https://suyashvakhariya.com/sitemap.xml
-Host: https://suyashvakhariya.com
+Sitemap: https://suyashvakhariya.in/sitemap.xml
+Host: https://suyashvakhariya.in
 
 # Google
 User-agent: Googlebot

@@ -136,12 +136,12 @@ export default function BlogPost({ post }) {
         <meta name="author" content="Suyash Vakhariya" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
-        <link rel="canonical" href={`https://suyashvakhariya.com/blog/${post.id}`} />
+        <link rel="canonical" href={`https://suyashvakhariya.in/blog/${post.id}`} />
 
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={`https://suyashvakhariya.com/blog/${post.id}`} />
+        <meta property="og:url" content={`https://suyashvakhariya.in/blog/${post.id}`} />
         <meta property="og:site_name" content="Suyash Vakhariya" />
         <meta property="article:author" content="Suyash Vakhariya" />
         <meta property="article:published_time" content={post.date} />
@@ -155,10 +155,10 @@ export default function BlogPost({ post }) {
           "@type": "BlogPosting",
           "headline": post.title,
           "description": post.excerpt,
-          "author": { "@type": "Person", "name": "Suyash Vakhariya", "url": "https://suyashvakhariya.com" },
+          "author": { "@type": "Person", "name": "Suyash Vakhariya", "url": "https://suyashvakhariya.in" },
           "datePublished": post.date,
           "publisher": { "@type": "Person", "name": "Suyash Vakhariya" },
-          "url": `https://suyashvakhariya.com/blog/${post.id}`,
+          "url": `https://suyashvakhariya.in/blog/${post.id}`,
           "keywords": post.tags.join(', '),
         })}} />
       </Head>

@@ -302,7 +302,7 @@ Shipping is a skill. The gap between "it works locally" and "it's live and relia
 
 ---
 
-*Check out all my deployed apps at [suyashvakhariya.com](https://suyashvakhariya.com/#projects).*
+*Check out all my deployed apps at [suyashvakhariya.in](https://suyashvakhariya.in/#projects).*
     `,
   },
   {

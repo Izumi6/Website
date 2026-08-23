@@ -33,7 +33,7 @@ export default function Home() {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://suyashvakhariya.com" />
+        <link rel="canonical" href="https://suyashvakhariya.in" />
 
         {/* Favicon */}
         <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
@@ -46,14 +46,14 @@ export default function Home() {
 
         {/* Language */}
         <meta httpEquiv="content-language" content="en" />
-        <link rel="alternate" hrefLang="en" href="https://suyashvakhariya.com" />
+        <link rel="alternate" hrefLang="en" href="https://suyashvakhariya.in" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://suyashvakhariya.com/" />
+        <meta property="og:url" content="https://suyashvakhariya.in/" />
         <meta property="og:title" content="Suyash Vakhariya — AI Engineer & Technical Product Manager" />
         <meta property="og:description" content="AI Engineer & Technical Product Manager from Pune, India. Building production AI systems — from ML pipelines to user-facing products. Published researcher in LLM memory management." />
-        <meta property="og:image" content="https://suyashvakhariya.com/images/suyash-hero-portrait.jpg" />
+        <meta property="og:image" content="https://suyashvakhariya.in/images/suyash-hero-portrait.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Suyash Vakhariya — AI Engineer" />
@@ -64,10 +64,10 @@ export default function Home() {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://suyashvakhariya.com/" />
+        <meta name="twitter:url" content="https://suyashvakhariya.in/" />
         <meta name="twitter:title" content="Suyash Vakhariya — AI Engineer & Technical Product Manager" />
         <meta name="twitter:description" content="AI Engineer from Pune building production ML systems, neural networks, and deployed web apps. Published researcher." />
-        <meta name="twitter:image" content="https://suyashvakhariya.com/images/suyash-hero-portrait.jpg" />
+        <meta name="twitter:image" content="https://suyashvakhariya.in/images/suyash-hero-portrait.jpg" />
         <meta name="twitter:image:alt" content="Suyash Vakhariya — AI Engineer" />
 
         {/* Schema.org: Person (enhanced for Knowledge Graph + GEO) */}
@@ -77,14 +77,14 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "@id": "https://suyashvakhariya.com/#person",
+              "@id": "https://suyashvakhariya.in/#person",
               "name": "Suyash Vakhariya",
               "givenName": "Suyash",
               "familyName": "Vakhariya",
-              "url": "https://suyashvakhariya.com",
+              "url": "https://suyashvakhariya.in",
               "image": {
                 "@type": "ImageObject",
-                "url": "https://suyashvakhariya.com/images/suyash-hero-portrait.jpg",
+                "url": "https://suyashvakhariya.in/images/suyash-hero-portrait.jpg",
                 "width": 400,
                 "height": 400
               },
@@ -130,12 +130,12 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Suyash Vakhariya",
-              "url": "https://suyashvakhariya.com",
+              "url": "https://suyashvakhariya.in",
               "description": "Personal portfolio and blog of Suyash Vakhariya — AI Engineer & Technical Product Manager",
-              "author": { "@id": "https://suyashvakhariya.com/#person" },
+              "author": { "@id": "https://suyashvakhariya.in/#person" },
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://suyashvakhariya.com/blog?q={search_term_string}",
+                "target": "https://suyashvakhariya.in/blog?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })
@@ -195,7 +195,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suyashvakhariya.com" }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suyashvakhariya.in" }
               ]
             })
           }}

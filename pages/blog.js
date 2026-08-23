@@ -24,12 +24,12 @@ export default function Blog() {
         <meta name="description" content="Technical articles on AI/ML, neuromorphic computing, full-stack development, and building production systems — by Suyash Vakhariya." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
-        <link rel="canonical" href="https://suyashvakhariya.com/blog" />
+        <link rel="canonical" href="https://suyashvakhariya.in/blog" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Blog — Suyash Vakhariya | AI Engineer" />
         <meta property="og:description" content="Technical articles on AI/ML, neuromorphic computing, and building production systems." />
-        <meta property="og:image" content="https://suyashvakhariya.com/images/suyash-hero-portrait.jpg" />
+        <meta property="og:image" content="https://suyashvakhariya.in/images/suyash-hero-portrait.jpg" />
 
       </Head>
 

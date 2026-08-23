@@ -4,7 +4,7 @@
 
 **AI Engineer · Technical Product Manager · ML Researcher**
 
-[![Live Site](https://img.shields.io/badge/🌐_Live_Site-suyashvakhariya.com-D4AF37?style=for-the-badge&labelColor=0A0A0F)](https://suyashvakhariya.com)
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-suyashvakhariya.in-D4AF37?style=for-the-badge&labelColor=0A0A0F)](https://suyashvakhariya.in)
 [![GitHub](https://img.shields.io/badge/GitHub-Izumi6-181717?style=for-the-badge&logo=github&labelColor=0A0A0F)](https://github.com/Izumi6)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-suyashvakhariya-0077B5?style=for-the-badge&logo=linkedin&labelColor=0A0A0F)](https://www.linkedin.com/in/suyashvakhariya)
 
