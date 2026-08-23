@@ -12,6 +12,7 @@ const navLinks = [
   { label: 'Research', href: '/#research' },
   { label: 'Experience', href: '/experience' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Uses', href: '/uses' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -85,7 +86,9 @@ export default function Navbar() {
   }
 
   const isActive = (href) => {
-    if (href === '/blog') return router.pathname === '/blog'
+    if (href === '/blog') return router.pathname === '/blog' || router.pathname.startsWith('/blog/')
+    if (href === '/experience') return router.pathname === '/experience'
+    if (href === '/uses') return router.pathname === '/uses'
     if (href.startsWith('/#')) {
       const sectionId = href.replace('/#', '')
       return router.pathname === '/' && activeSection === sectionId

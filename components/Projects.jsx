@@ -67,7 +67,7 @@ const deployedProjects = [
     desc: 'Smart shopping analytics platform that tracks price trends, compares products, and delivers intelligent purchase recommendations.',
     tech: ['HTML', 'CSS', 'JavaScript', 'E-commerce'],
     github: 'https://github.com/Izumi6/price-pulse-e-comerce',
-    live: 'https://price-pulse-e-comerce.vercel.app',
+    live: 'https://price-pulse.vercel.app',
     category: 'Full-Stack',
   },
   {
@@ -76,7 +76,7 @@ const deployedProjects = [
     desc: 'Intelligent study planning tool with Google authentication, task scheduling, progress tracking, and personalized study recommendations.',
     tech: ['JavaScript', 'React', 'Auth', 'Firebase'],
     github: 'https://github.com/Izumi6/Smart-Study-Planner',
-    live: 'https://smart-study-planner-izumi6s-projects.vercel.app',
+    live: 'https://smart-study-planner.vercel.app',
     category: 'EdTech',
   },
   {
@@ -85,7 +85,7 @@ const deployedProjects = [
     desc: 'Education analytics platform with student performance tracking, course management, and interactive data visualization dashboards.',
     tech: ['HTML', 'CSS', 'JavaScript', 'Education'],
     github: 'https://github.com/Izumi6/edunet',
-    live: 'https://edunet-izumi6s-projects.vercel.app',
+    live: 'https://edunet.vercel.app',
     category: 'EdTech',
   },
 ]
