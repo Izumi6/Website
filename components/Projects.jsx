@@ -63,11 +63,11 @@ const deployedProjects = [
   },
   {
     id: 'price-pulse',
-    title: 'Price Pulse',
-    desc: 'Smart shopping analytics platform that tracks price trends, compares products, and delivers intelligent purchase recommendations.',
+    title: 'PricePulse',
+    desc: 'Smart electronics price comparison across Amazon, Flipkart & Croma. Search, filter, sort, and find the best deals in India.',
     tech: ['HTML', 'CSS', 'JavaScript', 'E-commerce'],
-    github: 'https://github.com/Izumi6/price-pulse-e-comerce',
-    live: 'https://price-pulse.vercel.app',
+    github: 'https://github.com/Izumi6/Price-Pulse',
+    live: '',
     category: 'Full-Stack',
   },
   {
