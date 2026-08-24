@@ -53,6 +53,15 @@ const deployedProjects = [
     category: 'Full-Stack SaaS',
   },
   {
+    id: 'agent-fence',
+    title: 'AgentFence',
+    desc: 'The local security gate for AI coding agents. Detects secret leaks (tokens, API keys), destructive commands (rm -rf, force-push), and unsafe network egress before execution with native Model Context Protocol (MCP) server support.',
+    tech: ['Node.js', 'MCP Protocol', 'AI Security', 'DevSecOps', 'CLI'],
+    github: 'https://github.com/Izumi6/agent-fence',
+    live: 'https://izumi6.github.io/agent-fence/',
+    category: 'AI Security & Tooling',
+  },
+  {
     id: 'cloud-secure',
     title: 'CloudSecure',
     desc: 'Enterprise cloud security platform with real-time threat monitoring, compliance dashboards, and automated incident response workflows.',

@@ -155,7 +155,7 @@ export default function Home() {
                   "name": "What does Suyash Vakhariya do?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Suyash Vakhariya is an AI Engineer and Technical Product Manager from Pune, India. He builds production AI/ML systems including spam detectors, fake news classifiers, recommendation engines, and network intrusion detection systems. He has also deployed 8 production web applications on Vercel and published research on LLM agent memory management."
+                    "text": "Suyash Vakhariya is an AI Engineer and Technical Product Manager from Pune, India. He builds production AI/ML systems including AgentFence (AI coding agent security gate), spam detectors, fake news classifiers, recommendation engines, and network intrusion detection systems. He has also deployed 8+ production web applications and developer tools, and published research on LLM agent memory management (FAMM)."
                   }
                 },
                 {
