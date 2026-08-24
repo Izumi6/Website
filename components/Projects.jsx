@@ -90,12 +90,12 @@ const deployedProjects = [
   },
   {
     id: 'edunet',
-    title: 'Edunet Dashboard',
-    desc: 'Education analytics platform with student performance tracking, course management, and interactive data visualization dashboards.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Education'],
+    title: 'EduNet',
+    desc: 'Interactive engineering & AI learning ecosystem with 8 curriculum tracks, real-time algorithm visualizer sandbox, technical skill quizzes, and resource vault.',
+    tech: ['JavaScript', 'HTML5', 'CSS3', 'Algorithms', 'EdTech'],
     github: 'https://github.com/Izumi6/edunet',
-    live: 'https://edunet.vercel.app',
-    category: 'EdTech',
+    live: 'https://izumi6.github.io/edunet/',
+    category: 'EdTech & AI Systems',
   },
 ]
 
