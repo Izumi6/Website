@@ -82,11 +82,11 @@ const deployedProjects = [
   {
     id: 'smart-study',
     title: 'Smart Study Planner',
-    desc: 'Intelligent study planning tool with Google authentication, task scheduling, progress tracking, and personalized study recommendations.',
-    tech: ['JavaScript', 'React', 'Auth', 'Firebase'],
+    desc: 'All-in-one smart study workspace with Pomodoro focus timer, AI revision schedule generator, active recall flashcard vault, and GPA tracker.',
+    tech: ['JavaScript', 'HTML5', 'CSS3', 'Web Audio API', 'Productivity'],
     github: 'https://github.com/Izumi6/Smart-Study-Planner',
-    live: 'https://smart-study-planner.vercel.app',
-    category: 'EdTech',
+    live: 'https://izumi6.github.io/Smart-Study-Planner/',
+    category: 'EdTech & Productivity',
   },
   {
     id: 'edunet',
