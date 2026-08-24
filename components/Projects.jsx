@@ -67,7 +67,7 @@ const deployedProjects = [
     desc: 'Smart electronics price comparison across Amazon, Flipkart & Croma. Search, filter, sort, and find the best deals in India.',
     tech: ['HTML', 'CSS', 'JavaScript', 'E-commerce'],
     github: 'https://github.com/Izumi6/Price-Pulse',
-    live: '',
+    live: 'https://izumi6.github.io/Price-Pulse/',
     category: 'Full-Stack',
   },
   {
