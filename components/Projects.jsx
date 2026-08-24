@@ -58,7 +58,7 @@ const deployedProjects = [
     desc: 'Enterprise cloud security platform with real-time threat monitoring, compliance dashboards, and automated incident response workflows.',
     tech: ['JavaScript', 'React', 'Cloud Security'],
     github: 'https://github.com/Izumi6/cloud-secure',
-    live: 'https://cloud-secure.vercel.app',
+    live: 'https://cloud-secure-c411.vercel.app',
     category: 'Cloud Security',
   },
   {
