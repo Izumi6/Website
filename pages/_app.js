@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import CustomCursor from '../components/CustomCursor'
+import CopilotProvider from '../components/copilot/CopilotProvider'
 
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -27,9 +28,11 @@ export default function MyApp({ Component, pageProps }) {
           gtag('config', 'G-Y0H3CMPEP9');
         `}
       </Script>
-      <CustomCursor />
-      <Navbar />
-      <Component {...pageProps} />
+      <CopilotProvider>
+        <CustomCursor />
+        <Navbar />
+        <Component {...pageProps} />
+      </CopilotProvider>
     </>
   )
 }
