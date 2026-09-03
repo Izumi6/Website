@@ -1014,6 +1014,52 @@ html {
 }
 
 
+/* AgentFence Lab Tab */
+.lab-af-wrapper {
+  padding: 0;
+}
+
+.lab-af-header {
+  padding: 24px 24px 0;
+}
+
+.lab-af-intro {
+  max-width: 720px;
+}
+
+.lab-af-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(239, 68, 68, 0.08);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  margin-bottom: 10px;
+}
+
+.lab-af-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.lab-af-desc {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.lab-af-terminal-area {
+  padding: 16px 24px 24px;
+}
+
+
 /* ═══════════════════════════════════════════════════════════ */
 /*                 SUYASH AI COPILOT STYLES                  */
 /* ═══════════════════════════════════════════════════════════ */

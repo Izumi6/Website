@@ -9,10 +9,12 @@ import useSNNSimulation from '../../hooks/useSNNSimulation'
 
 const SNNCanvas = dynamic(() => import('./SNNCanvas'), { ssr: false })
 const FAMMVisualizer = dynamic(() => import('./FAMMVisualizer'), { ssr: false })
+const AgentFenceTerminal = dynamic(() => import('../projects/AgentFenceTerminal'), { ssr: false })
 
 const TABS = [
-  { id: 'snn', label: '⚡ Spiking Neural Network', icon: '⚡' },
-  { id: 'famm', label: '🧠 FAMM Memory Engine', icon: '🧠' },
+  { id: 'snn', label: '⚡ Spiking Neural Network' },
+  { id: 'famm', label: '🧠 FAMM Memory Engine' },
+  { id: 'agentfence', label: '🛡️ AgentFence Security Gate' },
 ]
 
 export default function ArchitectureLab() {
@@ -55,7 +57,7 @@ export default function ArchitectureLab() {
       <SectionHeading
         label="Interactive Research"
         title="AI Architecture Lab"
-        description="Two of my published AI systems, live and interactive. No slides. No bullet points."
+        description="Three of my AI systems, live and interactive. No slides. No bullet points."
       />
 
       {/* Lab Panel */}
@@ -117,22 +119,57 @@ export default function ArchitectureLab() {
               <FAMMVisualizer />
             </motion.div>
           )}
+
+          {activeTab === 'agentfence' && (
+            <motion.div
+              key="agentfence"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: reducedMotion ? 0 : 0.3 }}
+              className="lab-af-wrapper"
+            >
+              <div className="lab-af-header">
+                <div className="lab-af-intro">
+                  <span className="lab-af-badge">AI SECURITY</span>
+                  <h3 className="lab-af-title">AgentFence — Live Security Gate</h3>
+                  <p className="lab-af-desc">
+                    Type any command an AI coding agent might execute. AgentFence scans it against 6 rule categories
+                    in real-time — destructive commands, secret leaks, force-pushes, network exfiltration,
+                    privilege escalation, and environment variable access. Try it.
+                  </p>
+                </div>
+              </div>
+              <div className="lab-af-terminal-area">
+                <AgentFenceTerminal />
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
 
         {/* Footer */}
         <div className="lab-footer">
-          <span className="lab-footer-text">Based on peer-reviewed research published on Zenodo.</span>
+          <span className="lab-footer-text">
+            {activeTab === 'agentfence'
+              ? 'Open-source on GitHub. Supports Model Context Protocol (MCP) natively.'
+              : 'Based on peer-reviewed research published on Zenodo.'}
+          </span>
           <a
-            href="https://zenodo.org/records/21168000/files/main.pdf"
+            href={activeTab === 'agentfence'
+              ? 'https://github.com/Izumi6/agent-fence'
+              : 'https://zenodo.org/records/21168000/files/main.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             className="lab-footer-link"
           >
-            Read the FAMM Paper →
+            {activeTab === 'agentfence' ? 'View on GitHub →' : 'Read the FAMM Paper →'}
           </a>
-          <span className="lab-footer-doi">DOI 10.5281/zenodo.21168000</span>
+          {activeTab !== 'agentfence' && (
+            <span className="lab-footer-doi">DOI 10.5281/zenodo.21168000</span>
+          )}
         </div>
       </div>
     </motion.section>
   )
 }
+
