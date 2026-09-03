@@ -10,7 +10,6 @@ import Research from '../components/Research'
 import TechAchievements from '../components/TechAchievements'
 import CurrentStatus from '../components/CurrentStatus'
 import Contact from '../components/Contact'
-import ArchitectureLab from '../components/lab/ArchitectureLab'
 import ParticlesBackground from '../components/ParticlesBackground'
 import ScrollProgress from '../components/ScrollProgress'
 import SectionDivider from '../components/SectionDivider'
@@ -225,8 +224,6 @@ export default function Home() {
         <Projects />
         <SectionDivider />
         <Research />
-        <SectionDivider />
-        <ArchitectureLab />
         <SectionDivider />
         <Skills />
         <SectionDivider />
