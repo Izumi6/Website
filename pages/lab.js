@@ -13,13 +13,13 @@ export default function LabPage() {
     <div className="min-h-screen bg-darkBg text-secondary overflow-x-hidden selection:bg-primary/30 vignette scan-line film-grain">
       <Head>
         <title>AI Architecture Lab — Suyash Vakhariya</title>
-        <meta name="description" content="Interactive research sandbox — live SNN neuron simulator and FAMM Memory Engine visualizer. Built by Suyash Vakhariya." />
+        <meta name="description" content="Interactive AI architecture sandbox — live SNN neuron simulator, FAMM Memory Engine visualizer, and AgentFence live security gate. Built by Suyash Vakhariya." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://suyashvakhariya.in/lab" />
         <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
 
         <meta property="og:title" content="AI Architecture Lab — Suyash Vakhariya" />
-        <meta property="og:description" content="Interactive SNN simulator and FAMM Memory Engine visualizer — live research demos." />
+        <meta property="og:description" content="Interactive SNN simulator, FAMM Memory Engine visualizer, and AgentFence live security gate — hands-on AI systems demos." />
         <meta property="og:url" content="https://suyashvakhariya.in/lab" />
         <meta property="og:type" content="website" />
       </Head>

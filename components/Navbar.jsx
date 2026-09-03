@@ -87,6 +87,7 @@ export default function Navbar() {
   }
 
   const isActive = (href) => {
+    if (href === '/lab') return router.pathname === '/lab'
     if (href === '/blog') return router.pathname === '/blog' || router.pathname.startsWith('/blog/')
     if (href === '/experience') return router.pathname === '/experience'
     if (href === '/uses') return router.pathname === '/uses'
