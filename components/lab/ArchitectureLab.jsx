@@ -49,6 +49,7 @@ export default function ArchitectureLab() {
       className="mt-8 md:mt-12"
     >
       <SectionHeading
+        as="h1"
         label="Interactive Research"
         title="AI Architecture Lab"
         description="Three of my AI systems, live and interactive. No slides. No bullet points."
@@ -111,7 +112,7 @@ export default function ArchitectureLab() {
           <span className="lab-section-badge lab-badge-violet">PUBLISHED RESEARCH</span>
           <h3 className="lab-section-title">🧠 FAMM Memory Engine Visualizer</h3>
           <p className="lab-section-desc">
-            Watch how FAMM manages an LLM agent's memory in real-time — compressing old turns,
+            Watch how FAMM manages an LLM agent&apos;s memory in real-time — compressing old turns,
             promoting critical goals to priority cache, and maintaining 99.2% recall with 68% fewer tokens.
           </p>
         </div>

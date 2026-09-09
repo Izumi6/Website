@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  productionBrowserSourceMaps: false,
+  poweredByHeader: false,
 
   // SEO: Trailing slash consistency
   trailingSlash: false,

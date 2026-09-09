@@ -82,8 +82,32 @@ export default function Uses() {
         <title>Uses — Suyash Vakhariya | Tools & Tech Stack</title>
         <meta name="description" content="The tools, technologies, and software Suyash Vakhariya uses for AI/ML engineering, full-stack development, and research." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
         <link rel="canonical" href="https://suyashvakhariya.in/uses" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://suyashvakhariya.in/uses" />
+        <meta property="og:title" content="Uses — Suyash Vakhariya | Tools & Tech Stack" />
+        <meta property="og:description" content="Tools, technologies, and software for AI/ML engineering and full-stack development." />
+        <meta property="og:image" content="https://suyashvakhariya.in/images/og-image.png" />
+        <meta property="og:site_name" content="Suyash Vakhariya" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Uses — Suyash Vakhariya | Tools & Tech Stack" />
+        <meta name="twitter:image" content="https://suyashvakhariya.in/images/og-image.png" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suyashvakhariya.in" },
+                { "@type": "ListItem", "position": 2, "name": "Uses", "item": "https://suyashvakhariya.in/uses" }
+              ]
+            })
+          }}
+        />
       </Head>
 
       <ParticlesBackground />
@@ -94,13 +118,18 @@ export default function Uses() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors duration-300 mb-8">
-            <HiOutlineArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-gray-500 mb-8 font-mono">
+            <Link href="/" className="hover:text-primary transition-colors duration-200">
+              Home
+            </Link>
+            <span className="text-gray-600">/</span>
+            <span className="text-gray-300">Uses</span>
+          </nav>
         </motion.div>
 
         <SectionHeading
+          as="h1"
           label="My Setup"
           title="Tools & Technologies"
           description="The stack I use to build AI systems, ship web applications, and conduct research."

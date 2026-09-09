@@ -149,9 +149,32 @@ export default function ExperiencePage() {
         <title>Experience & Achievements — Suyash Vakhariya | AI Engineer</title>
         <meta name="description" content="Professional experience, education, research publications, and 22+ certifications — Suyash Vakhariya, AI Engineer & Technical Product Manager. B.E. Computer Engineering, SPPU." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
+        <link rel="canonical" href="https://suyashvakhariya.in/experience" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://suyashvakhariya.in/experience" />
         <meta property="og:title" content="Experience & Achievements — Suyash Vakhariya" />
         <meta property="og:description" content="Professional experience, education, research, and certifications." />
+        <meta property="og:image" content="https://suyashvakhariya.in/images/og-image.png" />
+        <meta property="og:site_name" content="Suyash Vakhariya" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Experience & Achievements — Suyash Vakhariya" />
+        <meta name="twitter:image" content="https://suyashvakhariya.in/images/og-image.png" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suyashvakhariya.in" },
+                { "@type": "ListItem", "position": 2, "name": "Experience", "item": "https://suyashvakhariya.in/experience" }
+              ]
+            })
+          }}
+        />
       </Head>
 
       <ScrollProgress />
@@ -159,11 +182,15 @@ export default function ExperiencePage() {
 
       <main className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 md:pt-36 pb-20">
 
-        {/* Header */}
+        {/* Breadcrumb & Navigation */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors duration-300 mb-8">
-            <HiOutlineArrowLeft className="w-4 h-4" /> Back to Home
-          </Link>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-gray-500 mb-8 font-mono">
+            <Link href="/" className="hover:text-primary transition-colors duration-200">
+              Home
+            </Link>
+            <span className="text-gray-600">/</span>
+            <span className="text-gray-300">Experience</span>
+          </nav>
           <div className="mb-8">
             <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white mb-4">Experience & Achievements</h1>
             <p className="text-lg text-gray-400 font-light max-w-2xl">Professional experience, education, published research, and industry certifications.</p>

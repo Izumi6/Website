@@ -1,9 +1,10 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-export default function SectionHeading({ label, title, description }) {
+export default function SectionHeading({ label, title, description, as = 'h2' }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const HeadingTag = as === 'h1' ? 'h1' : 'h2'
 
   return (
     <motion.div
@@ -27,9 +28,9 @@ export default function SectionHeading({ label, title, description }) {
 
       {/* Title with animated underline */}
       <div className="relative inline-block">
-        <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-white">
+        <HeadingTag className="text-4xl md:text-5xl font-poppins font-semibold text-white">
           {title}
-        </h2>
+        </HeadingTag>
         {/* Animated underline */}
         <motion.div
           initial={{ scaleX: 0 }}

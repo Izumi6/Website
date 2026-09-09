@@ -135,13 +135,16 @@ export default function BlogPost({ post }) {
         <meta name="description" content={post.excerpt} />
         <meta name="author" content="Suyash Vakhariya" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
         <link rel="canonical" href={`https://suyashvakhariya.in/blog/${post.id}`} />
 
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:url" content={`https://suyashvakhariya.in/blog/${post.id}`} />
+        <meta property="og:image" content="https://suyashvakhariya.in/images/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={post.title} />
         <meta property="og:site_name" content="Suyash Vakhariya" />
         <meta property="article:author" content="Suyash Vakhariya" />
         <meta property="article:published_time" content={post.date} />
@@ -149,17 +152,30 @@ export default function BlogPost({ post }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content="https://suyashvakhariya.in/images/og-image.png" />
+        <meta name="twitter:image:alt" content={post.title} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": post.title,
           "description": post.excerpt,
+          "image": "https://suyashvakhariya.in/images/og-image.png",
           "author": { "@type": "Person", "name": "Suyash Vakhariya", "url": "https://suyashvakhariya.in" },
           "datePublished": post.date,
           "publisher": { "@type": "Person", "name": "Suyash Vakhariya" },
           "url": `https://suyashvakhariya.in/blog/${post.id}`,
           "keywords": post.tags.join(', '),
+        })}} />
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suyashvakhariya.in" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://suyashvakhariya.in/blog" },
+            { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://suyashvakhariya.in/blog/${post.id}` }
+          ]
         })}} />
       </Head>
 
@@ -168,11 +184,19 @@ export default function BlogPost({ post }) {
 
       <main className="relative z-10 max-w-3xl mx-auto px-6 sm:px-8 pt-28 md:pt-36 pb-20">
 
-        {/* Back */}
+        {/* Breadcrumb Navigation */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors mb-8">
-            <HiOutlineArrowLeft className="w-4 h-4" /> All Articles
-          </Link>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-gray-500 mb-8 font-mono">
+            <Link href="/" className="hover:text-primary transition-colors duration-200">
+              Home
+            </Link>
+            <span className="text-gray-600">/</span>
+            <Link href="/blog" className="hover:text-primary transition-colors duration-200">
+              Blog
+            </Link>
+            <span className="text-gray-600">/</span>
+            <span className="text-gray-300 truncate max-w-[200px] sm:max-w-xs">{post.title}</span>
+          </nav>
         </motion.div>
 
         {/* Header */}

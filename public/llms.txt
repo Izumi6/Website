@@ -1,0 +1,31 @@
+# Suyash Vakhariya — AI Engineer & Technical Product Manager
+
+> Personal portfolio and technical blog: https://suyashvakhariya.in
+
+## About
+Suyash Vakhariya is an AI Engineer and Technical Product Manager based in Pune, India. He builds production AI/ML systems — from neural networks and spiking neural networks to full-stack web applications deployed on Vercel. He is a published researcher in LLM agent memory management.
+
+## Key Projects
+- **AgentFence**: Local security gate for AI coding agents. Detects secret leaks, destructive commands, and unsafe network egress. Supports Model Context Protocol (MCP). https://github.com/Izumi6/agent-fence
+- **FAMM Framework**: Future-Aware Adaptive Memory Management for long-term autonomous LLM agents. Published on Zenodo (DOI 10.5281/zenodo.21168000). https://zenodo.org/records/21168000
+- **Neuromorphic Computing SNN**: Bio-inspired spiking neural network architecture for signal classification. https://github.com/Izumi6/neuromorphic-computing-snn
+- **WorkSphere OS**: Enterprise workflow & team management platform. https://worksphere-os.vercel.app
+- **CloudSecure**: Enterprise cloud security platform with real-time threat monitoring. https://cloud-secure-c411.vercel.app
+
+## Technical Skills
+Python, TensorFlow, Scikit-learn, React, Next.js, Node.js, TypeScript, Three.js, C++, Arduino, Docker, AWS, PostgreSQL, MongoDB
+
+## Education
+B.E. Computer Engineering — Savitribai Phule Pune University (2022–2026)
+
+## Contact
+- Email: vakhariyasuyash@gmail.com
+- GitHub: https://github.com/Izumi6
+- LinkedIn: https://www.linkedin.com/in/suyashvakhariya
+
+## Pages
+- Home: https://suyashvakhariya.in
+- Blog: https://suyashvakhariya.in/blog
+- Experience: https://suyashvakhariya.in/experience
+- Lab: https://suyashvakhariya.in/lab
+- Uses: https://suyashvakhariya.in/uses

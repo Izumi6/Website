@@ -23,14 +23,32 @@ export default function Blog() {
         <title>Blog — Suyash Vakhariya | AI Engineer</title>
         <meta name="description" content="Technical articles on AI/ML, neuromorphic computing, full-stack development, and building production systems — by Suyash Vakhariya." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
         <link rel="canonical" href="https://suyashvakhariya.in/blog" />
 
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://suyashvakhariya.in/blog" />
         <meta property="og:title" content="Blog — Suyash Vakhariya | AI Engineer" />
         <meta property="og:description" content="Technical articles on AI/ML, neuromorphic computing, and building production systems." />
-        <meta property="og:image" content="https://suyashvakhariya.in/images/suyash-hero-portrait.jpg" />
+        <meta property="og:image" content="https://suyashvakhariya.in/images/og-image.png" />
+        <meta property="og:site_name" content="Suyash Vakhariya" />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog — Suyash Vakhariya | AI Engineer" />
+        <meta name="twitter:image" content="https://suyashvakhariya.in/images/og-image.png" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suyashvakhariya.in" },
+                { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://suyashvakhariya.in/blog" }
+              ]
+            })
+          }}
+        />
       </Head>
 
       <ParticlesBackground />
@@ -77,10 +95,14 @@ export default function Blog() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors duration-300 mb-8">
-            <HiOutlineArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-gray-500 mb-8 font-mono">
+            <Link href="/" className="hover:text-primary transition-colors duration-200">
+              Home
+            </Link>
+            <span className="text-gray-600">/</span>
+            <span className="text-gray-300">Blog</span>
+          </nav>
 
           <div className="mb-16">
             <span className="block text-primary font-cinzel text-sm tracking-[0.3em] mb-4 uppercase">

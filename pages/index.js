@@ -35,8 +35,7 @@ export default function Home() {
         {/* Canonical URL */}
         <link rel="canonical" href="https://suyashvakhariya.in" />
 
-        {/* Favicon */}
-        <link rel="icon" href="/images/suyash-hero-portrait.jpg" />
+        {/* Favicon — handled globally in _document.js */}
 
         {/* Geo Meta Tags */}
         <meta name="geo.region" content="IN-MH" />
@@ -53,10 +52,10 @@ export default function Home() {
         <meta property="og:url" content="https://suyashvakhariya.in/" />
         <meta property="og:title" content="Suyash Vakhariya — AI Engineer & Technical Product Manager" />
         <meta property="og:description" content="AI Engineer & Technical Product Manager from Pune, India. Building production AI systems — from ML pipelines to user-facing products. Published researcher in LLM memory management." />
-        <meta property="og:image" content="https://suyashvakhariya.in/images/suyash-hero-portrait.jpg" />
+        <meta property="og:image" content="https://suyashvakhariya.in/images/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Suyash Vakhariya — AI Engineer" />
+        <meta property="og:image:alt" content="Suyash Vakhariya — AI Engineer & Technical Product Manager" />
         <meta property="og:site_name" content="Suyash Vakhariya" />
         <meta property="og:locale" content="en_US" />
         <meta property="profile:first_name" content="Suyash" />
@@ -67,8 +66,8 @@ export default function Home() {
         <meta name="twitter:url" content="https://suyashvakhariya.in/" />
         <meta name="twitter:title" content="Suyash Vakhariya — AI Engineer & Technical Product Manager" />
         <meta name="twitter:description" content="AI Engineer from Pune building production ML systems, neural networks, and deployed web apps. Published researcher." />
-        <meta name="twitter:image" content="https://suyashvakhariya.in/images/suyash-hero-portrait.jpg" />
-        <meta name="twitter:image:alt" content="Suyash Vakhariya — AI Engineer" />
+        <meta name="twitter:image" content="https://suyashvakhariya.in/images/og-image.png" />
+        <meta name="twitter:image:alt" content="Suyash Vakhariya — AI Engineer & Technical Product Manager" />
 
         {/* Schema.org: Person (enhanced for Knowledge Graph + GEO) */}
         <script
@@ -196,6 +195,47 @@ export default function Home() {
               "@type": "BreadcrumbList",
               "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suyashvakhariya.in" }
+              ]
+            })
+          }}
+        />
+
+        {/* Schema.org: LocalBusiness / ProfessionalService */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "@id": "https://suyashvakhariya.in/#business",
+              "name": "Suyash Vakhariya — AI Engineering & Technical Consulting",
+              "url": "https://suyashvakhariya.in",
+              "image": "https://suyashvakhariya.in/images/suyash-hero-portrait.jpg",
+              "logo": "https://suyashvakhariya.in/images/og-image.png",
+              "description": "AI Engineering, Machine Learning architectures, full-stack web applications, and technical product management by Suyash Vakhariya.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "postalCode": "411001",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 18.5204,
+                "longitude": 73.8567
+              },
+              "priceRange": "$$",
+              "areaServed": [
+                { "@type": "Country", "name": "India" },
+                { "@type": "Country", "name": "United States" },
+                { "@type": "AdministrativeArea", "name": "Worldwide / Remote" }
+              ],
+              "founder": { "@id": "https://suyashvakhariya.in/#person" },
+              "sameAs": [
+                "https://github.com/Izumi6",
+                "https://www.linkedin.com/in/suyashvakhariya",
+                "https://zenodo.org/records/21168000"
               ]
             })
           }}
