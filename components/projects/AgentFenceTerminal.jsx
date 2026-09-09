@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const RULES = [
   {
     id: 'DESTRUCTIVE_CMD',
-    category: '🔴 DESTRUCTIVE COMMAND',
+    category: 'DESTRUCTIVE COMMAND',
     severity: 'CRITICAL',
     patterns: [/rm\s+(-[rf]+\s+)?\//, /rm\s+-rf/, /rmdir/, /del\s+\/[sfq]/i, /format\s+[a-z]:/i, /mkfs/, /dd\s+if=.*of=\/dev/],
     explanation: 'This command would recursively delete files from the filesystem. AgentFence blocks all destructive filesystem operations before they reach the shell.',
@@ -19,7 +19,7 @@ const RULES = [
   },
   {
     id: 'FORCE_PUSH',
-    category: '🟠 DANGEROUS GIT OPERATION',
+    category: 'DANGEROUS GIT OPERATION',
     severity: 'HIGH',
     patterns: [/git\s+push\s+--force/, /git\s+push\s+-f\b/, /git\s+reset\s+--hard\s+HEAD/],
     explanation: 'Force-pushing overwrites remote history and can cause permanent data loss for all collaborators. AgentFence intercepts this before it hits the remote.',
@@ -27,7 +27,7 @@ const RULES = [
   },
   {
     id: 'SECRET_LEAK',
-    category: '🔴 SECRET / API KEY DETECTED',
+    category: 'SECRET / API KEY DETECTED',
     severity: 'CRITICAL',
     patterns: [/(?:sk|pk)[-_](?:live|test)[-_][a-zA-Z0-9]{20,}/, /(?:AKIA|ASIA)[A-Z0-9]{16}/, /ghp_[a-zA-Z0-9]{36}/, /xox[bps]-[a-zA-Z0-9-]+/, /eyJ[a-zA-Z0-9_-]+\.eyJ[a-zA-Z0-9_-]+/, /api[_-]?key\s*[:=]\s*['"][a-zA-Z0-9]{20,}['"]/i, /secret\s*[:=]\s*['"][a-zA-Z0-9]{16,}['"]/i, /password\s*[:=]\s*['"][^'"]{8,}['"]/i],
     explanation: 'Detected a potential secret, API key, or token in the command output. AgentFence scans all agent outputs for credential patterns before they can be exfiltrated.',
@@ -35,7 +35,7 @@ const RULES = [
   },
   {
     id: 'NETWORK_EGRESS',
-    category: '🟡 UNAUTHORIZED NETWORK EGRESS',
+    category: 'UNAUTHORIZED NETWORK EGRESS',
     severity: 'MEDIUM',
     patterns: [/curl\s+.*-d\s/, /wget\s+.*-O\s*-\s*\|/, /nc\s+-[a-z]*\s/, /netcat/, /curl\s+.*\|\s*sh/, /curl\s+.*\|\s*bash/, /wget\s+.*\|\s*sh/],
     explanation: 'This command attempts to send data over the network or pipe remote code into a shell. AgentFence blocks unauthorized data exfiltration and remote code execution.',
@@ -43,7 +43,7 @@ const RULES = [
   },
   {
     id: 'PRIV_ESCALATION',
-    category: '🔴 PRIVILEGE ESCALATION',
+    category: 'PRIVILEGE ESCALATION',
     severity: 'CRITICAL',
     patterns: [/sudo\s+chmod\s+777/, /sudo\s+rm/, /sudo\s+su/, /chmod\s+[0-7]*7[0-7]*\s+\//, /chown\s+root/],
     explanation: 'This command escalates privileges or changes critical filesystem permissions. AgentFence blocks sudo commands and world-writable permission changes.',
@@ -51,7 +51,7 @@ const RULES = [
   },
   {
     id: 'ENV_EXFIL',
-    category: '🟠 ENVIRONMENT EXFILTRATION',
+    category: 'ENVIRONMENT EXFILTRATION',
     severity: 'HIGH',
     patterns: [/cat\s+.*\.env/, /echo\s+\$[A-Z_]*KEY/, /echo\s+\$[A-Z_]*SECRET/, /echo\s+\$[A-Z_]*TOKEN/, /printenv\s+.*KEY/, /env\s*\|\s*grep/],
     explanation: 'This command reads environment variables that likely contain secrets. AgentFence prevents agents from accessing or printing secret env vars.',
@@ -92,7 +92,7 @@ function analyzeCommand(input) {
   return {
     blocked: false,
     command: trimmed,
-    category: '✅ SAFE',
+    category: 'SAFE',
     severity: 'NONE',
     explanation: 'This command passed all AgentFence security rules. It would be allowed to execute.',
     rule: 'All rules passed — no threats detected',
@@ -121,7 +121,7 @@ function TerminalLine({ entry, index }) {
       {entry.type === 'blocked' && (
         <div className="af-block-result">
           <div className="af-block-header">
-            <span className="af-block-icon">🛡️</span>
+            <span className="af-block-icon">▪</span>
             <span className="af-block-title">AgentFence — BLOCKED</span>
             <span className={`af-block-severity af-sev-${entry.result.severity.toLowerCase()}`}>
               {entry.result.severity}
@@ -141,7 +141,7 @@ function TerminalLine({ entry, index }) {
               <span className="af-block-val">{entry.result.explanation}</span>
             </div>
             <div className="af-block-action">
-              ⛔ Execution denied. Command was NOT forwarded to the shell.
+              Execution denied. Command was NOT forwarded to the shell.
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ function TerminalLine({ entry, index }) {
 
       {entry.type === 'safe' && (
         <div className="af-safe-result">
-          <span className="af-safe-icon">✅</span>
+          <span className="af-safe-icon">✓</span>
           <span className="af-safe-text">AgentFence: Command passed all {RULES.length} security rules — execution allowed.</span>
         </div>
       )}
@@ -164,7 +164,7 @@ function TerminalLine({ entry, index }) {
 export default function AgentFenceTerminal() {
   const [input, setInput] = useState('')
   const [history, setHistory] = useState([
-    { type: 'system', text: '🛡️ AgentFence v1.0 — Security Gate Active' },
+    { type: 'system', text: 'AgentFence v1.0 — Security Gate Active' },
     { type: 'system', text: 'Type any command an AI agent might run. See it get blocked in real time.' },
   ])
   const [isProcessing, setIsProcessing] = useState(false)

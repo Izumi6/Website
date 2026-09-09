@@ -65,7 +65,7 @@ export default function ArchitectureLab() {
       >
         <div className="lab-section-header">
           <span className="lab-section-badge lab-badge-blue">NEUROMORPHIC COMPUTING</span>
-          <h3 className="lab-section-title">⚡ Spiking Neural Network Simulator</h3>
+          <h3 className="lab-section-title">Spiking Neural Network Simulator</h3>
           <p className="lab-section-desc">
             A 10-neuron feed-forward network using the Leaky Integrate-and-Fire (LIF) model.
             Click on the canvas to inject current. Watch spikes propagate across layers in real-time.
@@ -110,7 +110,7 @@ export default function ArchitectureLab() {
       >
         <div className="lab-section-header">
           <span className="lab-section-badge lab-badge-violet">PUBLISHED RESEARCH</span>
-          <h3 className="lab-section-title">🧠 FAMM Memory Engine Visualizer</h3>
+          <h3 className="lab-section-title">FAMM Memory Engine Visualizer</h3>
           <p className="lab-section-desc">
             Watch how FAMM manages an LLM agent&apos;s memory in real-time — compressing old turns,
             promoting critical goals to priority cache, and maintaining 99.2% recall with 68% fewer tokens.
@@ -136,7 +136,7 @@ export default function ArchitectureLab() {
       >
         <div className="lab-section-header">
           <span className="lab-section-badge lab-badge-red">AI SECURITY</span>
-          <h3 className="lab-section-title">🛡️ AgentFence — Live Security Gate</h3>
+          <h3 className="lab-section-title">AgentFence — Live Security Gate</h3>
           <p className="lab-section-desc">
             Type any command an AI coding agent might execute. AgentFence scans it against 6 rule categories
             in real-time — destructive commands, secret leaks, force-pushes, network exfiltration,

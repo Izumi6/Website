@@ -208,7 +208,7 @@ export default function SNNCanvas({ neurons, spikes, ripple, onCanvasClick }) {
         onClick={handleClick}
         style={{ width: '100%', height: '100%', cursor: 'crosshair' }}
       />
-      <span className="snn-canvas-hint">Click anywhere to inject current ⚡</span>
+      <span className="snn-canvas-hint">Click anywhere to inject current</span>
     </div>
   )
 }

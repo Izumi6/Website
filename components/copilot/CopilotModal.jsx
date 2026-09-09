@@ -30,10 +30,10 @@ const ACTION_ICONS = {
   JUMP: '↓',
   GITHUB: '⤴',
   GITHUB_ALL: '⤴',
-  LIVE: '⚡',
-  PAPER: '📄',
-  RESUME: '📥',
-  CONTACT: '✉️',
+  LIVE: '→',
+  PAPER: '↗',
+  RESUME: '↓',
+  CONTACT: '✉',
 }
 
 export default function CopilotModal({ onClose }) {
@@ -129,7 +129,7 @@ export default function CopilotModal({ onClose }) {
 
         {/* Search Input */}
         <form onSubmit={handleSubmit} className="copilot-input-row">
-          <span className="copilot-search-icon">🔍</span>
+          <span className="copilot-search-icon">⌕</span>
           <input
             ref={inputRef}
             type="text"
@@ -183,7 +183,7 @@ export default function CopilotModal({ onClose }) {
             transition={{ duration: 0.3 }}
           >
             <div className="copilot-response-header">
-              <span className="copilot-response-avatar">🤖</span>
+              <span className="copilot-response-avatar">SV</span>
               <span className="copilot-response-name">Suyash AI</span>
             </div>
             <div className="copilot-response-body">

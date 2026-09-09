@@ -384,13 +384,14 @@ export function queryPortfolioAI(query) {
 }
 
 export const SUGGESTED_PROMPTS = [
-  { icon: '🛡️', label: 'What is AgentFence?' },
-  { icon: '🧠', label: 'Tell me about FAMM' },
-  { icon: '☁️', label: 'CloudSecure overview' },
-  { icon: '📄', label: 'Get his resume' },
-  { icon: '💼', label: 'Is Suyash available to hire?' },
-  { icon: '🔬', label: 'SNN research explained' },
-  { icon: '🐍', label: 'What Python projects has he built?' },
-  { icon: '🔒', label: 'What security tools has he built?' },
-  { icon: '📊', label: 'What are his stats?' },
+  { icon: '→', label: 'What is AgentFence?' },
+  { icon: '→', label: 'Tell me about FAMM' },
+  { icon: '→', label: 'CloudSecure overview' },
+  { icon: '→', label: 'Get his resume' },
+  { icon: '→', label: 'Is Suyash available to hire?' },
+  { icon: '→', label: 'SNN research explained' },
+  { icon: '→', label: 'What Python projects has he built?' },
+  { icon: '→', label: 'What security tools has he built?' },
+  { icon: '→', label: 'What are his stats?' },
 ]
+

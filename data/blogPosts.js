@@ -603,8 +603,8 @@ As LLM agents move from single-turn chatbots to **autonomous systems** that oper
 
 ## Read the Full Paper
 
-📄 [Download PDF](https://zenodo.org/records/21168000/files/main.pdf)
-🔗 [DOI: 10.5281/zenodo.21168000](https://doi.org/10.5281/zenodo.21168000)
+[Download PDF](https://zenodo.org/records/21168000/files/main.pdf)
+[DOI: 10.5281/zenodo.21168000](https://doi.org/10.5281/zenodo.21168000)
 
 ---
 

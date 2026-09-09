@@ -21,7 +21,7 @@ export default function FloatingPill({ onClick }) {
       }}
       aria-label="Open Suyash AI Copilot"
     >
-      <span className="copilot-pill-icon">💬</span>
+      <span className="copilot-pill-icon">⌘</span>
       <span className="copilot-pill-text">Ask Suyash AI</span>
       <kbd className="copilot-pill-kbd">⌘K</kbd>
     </motion.button>

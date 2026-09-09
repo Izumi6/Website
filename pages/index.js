@@ -16,9 +16,18 @@ import SectionDivider from '../components/SectionDivider'
 import { HiOutlineArrowUp } from 'react-icons/hi2'
 
 const Name3D = dynamic(() => import('../components/Name3D'), { ssr: false })
-
 export default function Home() {
   const scrollToTop = () => {
+    const homeEl = document.getElementById('home')
+    if (homeEl) {
+      homeEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+    const nextEl = document.getElementById('__next')
+    if (nextEl) {
+      nextEl.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
+    document.body.scrollTo({ top: 0, behavior: 'smooth' })
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 

@@ -162,10 +162,10 @@ export default function FAMMVisualizer() {
             <div className="famm-tier-header">
               <span className="famm-tier-name">{tier.tier}</span>
               {tier.id === 'cache' && tier.entries.length > 0 && (
-                <span className="famm-promoted-badge">PROMOTED by FAMM ⬆</span>
+                <span className="famm-promoted-badge">PROMOTED by FAMM</span>
               )}
-              {tier.id === 'system' && <span className="famm-pin">📌</span>}
-              {tier.id === 'archive' && tier.entries.length > 0 && <span className="famm-compress-icon">🗜️</span>}
+              {tier.id === 'system' && <span className="famm-pin">PINNED</span>}
+              {tier.id === 'archive' && tier.entries.length > 0 && <span className="famm-compress-icon">COMPRESSED</span>}
             </div>
 
             <AnimatePresence mode="popLayout">
@@ -202,7 +202,7 @@ export default function FAMMVisualizer() {
             onClick={runSimulation}
             disabled={isRunning}
           >
-            {isRunning ? '⏳ Simulating...' : phase === 4 ? '↺ Run Again →' : '▶ Run Simulation →'}
+            {isRunning ? 'Simulating...' : phase === 4 ? 'Run Again →' : 'Run Simulation →'}
           </button>
 
           <div className="famm-toggle-row">
