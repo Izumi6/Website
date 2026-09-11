@@ -12,14 +12,23 @@ export default function SectionDivider() {
         className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent origin-center"
       />
 
-      {/* Center diamond accent */}
+      {/* Center emblem accent */}
       <motion.div
-        initial={{ scale: 0, rotate: 0 }}
-        whileInView={{ scale: 1, rotate: 45 }}
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-        className="absolute w-2 h-2 bg-primary/40 border border-primary/30"
-      />
+        transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+        className="absolute flex items-center justify-center"
+      >
+        <img
+          src="/images/bg-gold-emblem.png"
+          alt=""
+          aria-hidden="true"
+          className="w-8 h-12 md:w-10 md:h-14 object-contain"
+          style={{ mixBlendMode: 'screen', opacity: 0.2 }}
+          loading="lazy"
+        />
+      </motion.div>
 
       {/* Center glow */}
       <div className="absolute w-32 h-8 bg-primary/5 blur-2xl rounded-full" />
