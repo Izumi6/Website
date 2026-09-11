@@ -91,22 +91,24 @@ html {
   animation: deco-float 8s ease-in-out infinite;
 }
 
-/* Slow pulse glow for decorative elements */
+/* Slow pulse glow for decorative elements — preserves base opacity while breathing glow */
 @keyframes deco-pulse {
-  0%, 100% { opacity: 0.08; }
-  50% { opacity: 0.14; }
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.25)) brightness(1); }
+  50% { filter: drop-shadow(0 0 28px rgba(212, 175, 55, 0.55)) brightness(1.2); }
 }
 
 .deco-pulse {
   animation: deco-pulse 6s ease-in-out infinite;
 }
 
-/* Hide decorative images on very small screens for performance */
+/* Gracefully scale decorative images on very small screens instead of hiding */
 @media (max-width: 640px) {
   .deco-hide-mobile {
-    display: none;
+    opacity: 0.65 !important;
+    transform-origin: center;
   }
 }
+
 
 .text-neon {
   text-shadow: 0 2px 12px rgba(212, 175, 55, 0.12), 0 6px 30px rgba(197, 160, 40, 0.06);

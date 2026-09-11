@@ -48,7 +48,7 @@ export default function LabPage() {
       <div className="floating-dust" />
 
       {/* Gold emblem ambient background */}
-      <div className="deco-img deco-hide-mobile deco-pulse" style={{ top: '5%', right: '5%', width: '200px', height: '300px', opacity: 0.06 }}>
+      <div className="deco-img deco-hide-mobile deco-pulse" style={{ top: '2%', right: '4%', width: '260px', height: '380px', opacity: 0.45 }}>
         <img src="/images/bg-gold-emblem.png" alt="" aria-hidden="true" loading="lazy" />
       </div>
 
@@ -75,6 +75,21 @@ export default function LabPage() {
         </motion.div>
 
         <ArchitectureLab />
+
+        {/* Gold lotus closer */}
+        <div className="relative flex justify-center mt-16 mb-4" style={{ zIndex: 10 }}>
+          <div className="deco-float" style={{ width: '260px', height: '260px', maxWidth: '85vw', opacity: 0.85 }}>
+            <img
+              src="/images/bg-gold-lotus.png"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-contain"
+              style={{ mixBlendMode: 'screen' }}
+              loading="lazy"
+            />
+          </div>
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 h-14 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+        </div>
       </motion.main>
     </div>
   )

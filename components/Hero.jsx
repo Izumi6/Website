@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
+import { HiOutlineArrowDown, HiOutlineDocumentArrowDown } from 'react-icons/hi2'
 import TypingRoles from './TypingRoles'
 
 const stats = [
@@ -40,8 +41,8 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 pt-28 md:pt-32">
 
-      {/* Gold streaks — subtle background behind text side */}
-      <div className="deco-img deco-hide-mobile" style={{ top: '10%', left: '-10%', width: '70%', height: '80%', opacity: 0.06 }}>
+      {/* Gold streaks — luminous ambient background behind text side */}
+      <div className="deco-img deco-hide-mobile" style={{ top: '8%', left: '-8%', width: '65%', height: '80%', opacity: 0.35 }}>
         <img src="/images/bg-gold-streaks.png" alt="" aria-hidden="true" loading="lazy" />
       </div>
 
@@ -99,26 +100,27 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* Bio */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-4 text-lg md:text-xl max-w-xl text-gray-400 leading-relaxed font-light"
+          className="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-xl mb-8"
         >
-          I build production AI systems and ship products. From <span className="text-white font-medium">ML pipelines</span> to <span className="text-white font-medium">user-facing applications</span> — bridging research and real-world impact.
+          Building at the frontier of artificial intelligence, neuro-symbolic systems, and high-impact digital products.
         </motion.p>
 
-        {/* Proof Stats Bar */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-8 flex flex-wrap gap-6"
+          className="mt-8 flex flex-wrap gap-6 mb-8"
         >
           {stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center gap-3">
               <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              <span className="text-xs text-gray-500 uppercase tracking-wider leading-tight font-medium">
+              <span className="text-xs text-gray-400 uppercase tracking-wider leading-tight font-medium">
                 {stat.label.split(' ').map((word, j) => (
                   <span key={j} className="block">{word}</span>
                 ))}
@@ -135,35 +137,42 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-10 flex flex-wrap gap-4"
+          className="flex flex-wrap items-center gap-4 mb-8"
         >
           <a
             href="#projects"
-            className="group relative px-8 py-4 bg-primary text-darkBg font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]"
+            className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-black font-inter font-medium text-sm tracking-wide overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95"
           >
-            <span className="relative z-10">View Projects</span>
-            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-            {/* Shimmer effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative z-10 flex items-center gap-2">
+              Explore Work
+              <HiOutlineArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300" />
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
 
           <a
-            href="https://github.com/Izumi6"
-            target="_blank"
-            rel="noreferrer"
-            className="interactive flex items-center gap-2 px-8 py-4 border border-white/10 text-white rounded-full hover:bg-white/5 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]"
+            href="#contact"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-primary/20 text-white font-inter font-medium text-sm tracking-wide hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
           >
-            <FaGithub className="w-5 h-5" />
-            GitHub
+            Get In Touch
+          </a>
+
+          <a
+            href="/resume.pdf"
+            download="Suyash_Vakhariya_Resume.pdf"
+            className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full text-gray-400 hover:text-primary font-inter text-sm tracking-wide transition-colors duration-300"
+          >
+            <HiOutlineDocumentArrowDown className="w-4 h-4" />
+            Resume
           </a>
         </motion.div>
 
-        {/* Social Links */}
+        {/* Social Links Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-14 flex items-center gap-6"
+          className="flex items-center gap-6 pt-2"
         >
           <a href="https://github.com/Izumi6" target="_blank" rel="noreferrer" className="group flex items-center gap-2 text-sm text-gray-500 font-mono tracking-wider hover:text-primary transition-colors duration-300">
             <FaGithub className="w-4 h-4" />
@@ -182,23 +191,49 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Portrait Image — with gold circle frame */}
+      {/* Portrait Image — photo inside the gold circle frame */}
       <motion.div
         className="flex-1 order-1 md:order-2 flex justify-center md:justify-end"
         initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
         animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
-        <div className="relative w-72 h-72 md:w-[400px] md:h-[400px]">
-          {/* Gold circle frame — the key decorative element */}
+        {/* Outer container — sized to the exact aspect ratio of the gold circle artwork (576:1024) */}
+        <div
+          className="relative w-[280px] sm:w-[320px] md:w-[370px] lg:w-[410px]"
+          style={{ aspectRatio: '576 / 1024' }}
+        >
+          {/* Portrait photo — seated mathematically inside the golden ring */}
+          {/* In the 576x1024 image, circle center is X=50%, Y=22.95%, inner diameter is 61.5% */}
+          <div
+            className="absolute rounded-full overflow-hidden shadow-2xl shadow-black ring-2 ring-primary/40"
+            style={{
+              width: '61.5%',
+              aspectRatio: '1 / 1',
+              top: '22.95%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 1,
+            }}
+          >
+            <img
+              src="/images/suyash-hero-portrait.jpg"
+              alt="Suyash Vakhariya — AI Engineer and Technical Product Manager, Pune, India"
+              className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
+            />
+            {/* Cinematic subtle gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-darkBg/20 via-transparent to-primary/10 mix-blend-overlay pointer-events-none" />
+          </div>
+
+          {/* The gold circle frame artwork — overlays with screen blend so the luminous golden ring wraps around the photo */}
           <motion.div
             animate={{
-              scale: [1, 1.02, 1],
-              opacity: [0.25, 0.35, 0.25],
+              scale: [1, 1.012, 1],
+              opacity: [0.9, 1, 0.9],
             }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -inset-12 md:-inset-16"
-            style={{ zIndex: 0 }}
+            className="absolute inset-0 pointer-events-none"
+            style={{ zIndex: 2 }}
           >
             <img
               src="/images/bg-gold-circle.png"
@@ -210,25 +245,21 @@ export default function Hero() {
             />
           </motion.div>
 
-          {/* Soft ambient glow */}
+          {/* Golden ambient aura behind the ring */}
           <motion.div
             animate={{
-              scale: [1.1, 1.2, 1.1],
-              opacity: [0.1, 0.18, 0.1],
+              scale: [1, 1.15, 1],
+              opacity: [0.3, 0.5, 0.3],
             }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full"
+            className="absolute w-[65%] aspect-square bg-primary/30 blur-[60px] rounded-full pointer-events-none"
+            style={{
+              top: '22.95%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 0,
+            }}
           />
-
-          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/5 shadow-2xl shadow-black/50 ring-1 ring-white/10" style={{ zIndex: 2 }}>
-            <img
-              src="/images/suyash-hero-portrait.jpg"
-              alt="Suyash Vakhariya — AI Engineer and Technical Product Manager, Pune, India"
-              className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
-            />
-            {/* Overlay Gradient for cinematic look */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-darkBg/60 via-transparent to-primary/10 mix-blend-overlay" />
-          </div>
         </div>
       </motion.div>
 

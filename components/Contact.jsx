@@ -109,9 +109,9 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2, delay: 0.3 }}
-        className="relative flex justify-center mt-16 deco-hide-mobile"
+        className="relative flex justify-center mt-16"
       >
-        <div className="deco-float" style={{ width: '280px', height: '280px', opacity: 0.12 }}>
+        <div className="deco-float" style={{ width: '320px', height: '320px', maxWidth: '85vw', opacity: 0.85 }}>
           <img
             src="/images/bg-gold-lotus.png"
             alt=""
@@ -122,7 +122,7 @@ export default function Contact() {
           />
         </div>
         {/* Glow underneath lotus */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-primary/5 blur-3xl rounded-full" />
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-80 h-20 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
       </motion.div>
     </section>
   )
