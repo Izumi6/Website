@@ -43,9 +43,9 @@ export default function CopilotModal({ onClose }) {
   const inputRef = useRef(null)
   const overlayRef = useRef(null)
 
-  // Auto-focus input on mount
+  // Auto-focus input on mount without scrolling background
   useEffect(() => {
-    const timer = setTimeout(() => inputRef.current?.focus(), 100)
+    const timer = setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 100)
     return () => clearTimeout(timer)
   }, [])
 

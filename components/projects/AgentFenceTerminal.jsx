@@ -202,7 +202,7 @@ export default function AgentFenceTerminal() {
 
       setIsProcessing(false)
       setInput('')
-      setTimeout(() => inputRef.current?.focus(), 50)
+      setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 50)
     }, 120 + Math.random() * 180)
   }, [isProcessing])
 
@@ -252,7 +252,7 @@ export default function AgentFenceTerminal() {
         </div>
 
         {/* Terminal Body */}
-        <div className="af-body" ref={scrollRef} onClick={() => inputRef.current?.focus()}>
+        <div className="af-body" ref={scrollRef} onClick={() => inputRef.current?.focus({ preventScroll: true })}>
           {history.map((entry, i) => (
             <TerminalLine key={i} entry={entry} index={i} />
           ))}
@@ -276,7 +276,6 @@ export default function AgentFenceTerminal() {
                 placeholder="type a command..."
                 autoComplete="off"
                 spellCheck="false"
-                autoFocus
               />
             </form>
           )}

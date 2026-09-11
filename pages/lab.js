@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
@@ -9,6 +10,10 @@ import { HiOutlineArrowLeft } from 'react-icons/hi2'
 const ArchitectureLab = dynamic(() => import('../components/lab/ArchitectureLab'), { ssr: false })
 
 export default function LabPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen bg-darkBg text-secondary overflow-x-hidden selection:bg-primary/30 vignette scan-line film-grain">
       <Head>
