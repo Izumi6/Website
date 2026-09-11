@@ -40,11 +40,6 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 pt-28 md:pt-32">
 
-      {/* Gold streaks — subtle background behind text side */}
-      <div className="deco-img deco-hide-mobile" style={{ top: '10%', left: '-10%', width: '70%', height: '80%', opacity: 0.06 }}>
-        <img src="/images/bg-gold-streaks.png" alt="" aria-hidden="true" loading="lazy" />
-      </div>
-
       {/* Text Content */}
       <motion.div
         className="z-20 flex-1 order-2 md:order-1"
@@ -182,7 +177,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Portrait Image — with gold circle frame */}
+      {/* Portrait Image */}
       <motion.div
         className="flex-1 order-1 md:order-2 flex justify-center md:justify-end"
         initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
@@ -190,37 +185,32 @@ export default function Hero() {
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
         <div className="relative w-72 h-72 md:w-[400px] md:h-[400px]">
-          {/* Gold circle frame — the key decorative element */}
-          <motion.div
-            animate={{
-              scale: [1, 1.02, 1],
-              opacity: [0.25, 0.35, 0.25],
-            }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -inset-12 md:-inset-16"
-            style={{ zIndex: 0 }}
-          >
-            <img
-              src="/images/bg-gold-circle.png"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-contain"
-              style={{ mixBlendMode: 'screen' }}
-              loading="eager"
-            />
-          </motion.div>
-
-          {/* Soft ambient glow */}
+          {/* Multi-layer cinematic glow */}
           <motion.div
             animate={{
               scale: [1.1, 1.2, 1.1],
-              opacity: [0.1, 0.18, 0.1],
+              opacity: [0.15, 0.25, 0.15],
             }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full"
+            className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"
+          />
+          <motion.div
+            animate={{
+              scale: [1.2, 1.3, 1.2],
+              opacity: [0.05, 0.1, 0.05],
+            }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            className="absolute inset-0 bg-white/5 blur-[80px] rounded-full"
           />
 
-          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/5 shadow-2xl shadow-black/50 ring-1 ring-white/10" style={{ zIndex: 2 }}>
+          {/* Rotating ring accent */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            className="absolute -inset-4 rounded-full border border-dashed border-primary/10"
+          />
+
+          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/5 shadow-2xl shadow-black/50 ring-1 ring-white/10">
             <img
               src="/images/suyash-hero-portrait.jpg"
               alt="Suyash Vakhariya — AI Engineer and Technical Product Manager, Pune, India"

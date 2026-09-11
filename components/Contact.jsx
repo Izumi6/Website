@@ -52,7 +52,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="relative mt-8 md:mt-12 mb-20 px-4">
+    <section id="contact" className="mt-8 md:mt-12 mb-20 px-4">
       <SectionHeading
         label="Connect"
         title="Get in Touch"
@@ -102,28 +102,6 @@ export default function Contact() {
           ))}
         </motion.div>
       </div>
-
-      {/* Gold lotus decoration at the bottom */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2, delay: 0.3 }}
-        className="relative flex justify-center mt-16 deco-hide-mobile"
-      >
-        <div className="deco-float" style={{ width: '280px', height: '280px', opacity: 0.12 }}>
-          <img
-            src="/images/bg-gold-lotus.png"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-contain"
-            style={{ mixBlendMode: 'screen' }}
-            loading="lazy"
-          />
-        </div>
-        {/* Glow underneath lotus */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-primary/5 blur-3xl rounded-full" />
-      </motion.div>
     </section>
   )
 }

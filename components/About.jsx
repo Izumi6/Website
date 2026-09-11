@@ -27,11 +27,7 @@ const whatIDo = [
 
 export default function About() {
   return (
-    <section id="about" className="relative mt-8 md:mt-12">
-      {/* Gold spotlight ambient background */}
-      <div className="deco-img deco-hide-mobile" style={{ top: '-20%', right: '-15%', width: '60%', height: '120%', opacity: 0.04 }}>
-        <img src="/images/bg-gold-spotlight.png" alt="" aria-hidden="true" loading="lazy" />
-      </div>
+    <section id="about" className="mt-8 md:mt-12">
       <SectionHeading label="Who I Am" title="About" />
 
       <motion.div

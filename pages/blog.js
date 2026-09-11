@@ -53,11 +53,6 @@ export default function Blog() {
 
       <ParticlesBackground />
 
-      {/* Gold spotlight behind header */}
-      <div className="deco-img deco-hide-mobile" style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '600px', opacity: 0.05 }}>
-        <img src="/images/bg-gold-spotlight.png" alt="" aria-hidden="true" loading="lazy" />
-      </div>
-
       <main className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 md:pt-36 pb-20">
 
         {/* Elegant Name Header */}
@@ -258,22 +253,8 @@ export default function Blog() {
         </motion.div>
       </main>
 
-      {/* Gold lotus before footer */}
-      <div className="relative flex justify-center mt-8 mb-4 deco-hide-mobile" style={{ zIndex: 10 }}>
-        <div className="deco-float" style={{ width: '200px', height: '200px', opacity: 0.1 }}>
-          <img
-            src="/images/bg-gold-lotus.png"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-contain"
-            style={{ mixBlendMode: 'screen' }}
-            loading="lazy"
-          />
-        </div>
-      </div>
-
       {/* Footer */}
-      <footer className="relative z-10 py-12 text-center text-sm font-light text-gray-500 border-t border-white/5 mt-4">
+      <footer className="relative z-10 py-12 text-center text-sm font-light text-gray-500 border-t border-white/5 mt-16">
         <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
           <p>© {new Date().getFullYear()} Suyash Vakhariya</p>
           <div className="flex items-center gap-6 text-xs">

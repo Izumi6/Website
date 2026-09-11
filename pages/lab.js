@@ -47,11 +47,6 @@ export default function LabPage() {
       <ParticlesBackground />
       <div className="floating-dust" />
 
-      {/* Gold emblem ambient background */}
-      <div className="deco-img deco-hide-mobile deco-pulse" style={{ top: '5%', right: '5%', width: '200px', height: '300px', opacity: 0.06 }}>
-        <img src="/images/bg-gold-emblem.png" alt="" aria-hidden="true" loading="lazy" />
-      </div>
-
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

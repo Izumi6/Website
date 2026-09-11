@@ -112,11 +112,6 @@ export default function Uses() {
 
       <ParticlesBackground />
 
-      {/* Gold spotlight ambient background */}
-      <div className="deco-img deco-hide-mobile" style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '80%', height: '500px', opacity: 0.04 }}>
-        <img src="/images/bg-gold-spotlight.png" alt="" aria-hidden="true" loading="lazy" />
-      </div>
-
       <main className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 md:pt-36 pb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

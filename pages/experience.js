@@ -180,11 +180,6 @@ export default function ExperiencePage() {
       <ScrollProgress />
       <ParticlesBackground />
 
-      {/* Gold streaks ambient background */}
-      <div className="deco-img deco-hide-mobile" style={{ top: 0, right: '-10%', width: '60%', height: '500px', opacity: 0.05 }}>
-        <img src="/images/bg-gold-streaks.png" alt="" aria-hidden="true" loading="lazy" />
-      </div>
-
       <main className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 md:pt-36 pb-20">
 
         {/* Breadcrumb & Navigation */}
