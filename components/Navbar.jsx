@@ -113,12 +113,16 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-16 md:h-20">
 
-            {/* Logo — SV Monogram */}
+            {/* Logo */}
             <Link href="/" className="group relative flex items-center gap-2">
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center group-hover:border-primary/60 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.15)]">
-                <span className="text-primary font-poppins font-bold text-lg tracking-tight">
-                  SV
-                </span>
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-primary/30 group-hover:border-primary/60 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.15)]">
+                <img
+                  src="/images/logo-square.png"
+                  alt="Suyash Vakhariya"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
                 {/* Subtle glow on hover */}
                 <div className="absolute inset-0 rounded-xl bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
