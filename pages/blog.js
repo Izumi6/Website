@@ -54,7 +54,7 @@ export default function Blog() {
       <ParticlesBackground />
 
       {/* Gold spotlight behind header */}
-      <div className="deco-img deco-hide-mobile" style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '600px', opacity: 0.35 }}>
+      <div className="deco-img deco-hide-mobile" style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '600px', opacity: 0.05 }}>
         <img src="/images/bg-gold-spotlight.png" alt="" aria-hidden="true" loading="lazy" />
       </div>
 
@@ -259,8 +259,8 @@ export default function Blog() {
       </main>
 
       {/* Gold lotus before footer */}
-      <div className="relative flex justify-center mt-12 mb-6" style={{ zIndex: 10 }}>
-        <div className="deco-float" style={{ width: '280px', height: '280px', maxWidth: '85vw', opacity: 0.85 }}>
+      <div className="relative flex justify-center mt-8 mb-4 deco-hide-mobile" style={{ zIndex: 10 }}>
+        <div className="deco-float" style={{ width: '200px', height: '200px', opacity: 0.1 }}>
           <img
             src="/images/bg-gold-lotus.png"
             alt=""
@@ -270,7 +270,6 @@ export default function Blog() {
             loading="lazy"
           />
         </div>
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 h-14 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
       </div>
 
       {/* Footer */}

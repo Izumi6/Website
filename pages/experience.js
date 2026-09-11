@@ -181,7 +181,7 @@ export default function ExperiencePage() {
       <ParticlesBackground />
 
       {/* Gold streaks ambient background */}
-      <div className="deco-img deco-hide-mobile" style={{ top: 0, right: '-10%', width: '65%', height: '550px', opacity: 0.35 }}>
+      <div className="deco-img deco-hide-mobile" style={{ top: 0, right: '-10%', width: '60%', height: '500px', opacity: 0.05 }}>
         <img src="/images/bg-gold-streaks.png" alt="" aria-hidden="true" loading="lazy" />
       </div>
 
@@ -375,21 +375,6 @@ export default function ExperiencePage() {
         </div>
 
       </main>
-
-      {/* Gold lotus before footer */}
-      <div className="relative flex justify-center mt-12 mb-6" style={{ zIndex: 10 }}>
-        <div className="deco-float" style={{ width: '280px', height: '280px', maxWidth: '85vw', opacity: 0.85 }}>
-          <img
-            src="/images/bg-gold-lotus.png"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-contain"
-            style={{ mixBlendMode: 'screen' }}
-            loading="lazy"
-          />
-        </div>
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 h-14 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
-      </div>
 
       {/* Footer */}
       <footer className="relative z-10 py-12 text-center text-sm font-light text-gray-500 border-t border-white/5 mt-20">

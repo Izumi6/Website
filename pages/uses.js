@@ -113,7 +113,7 @@ export default function Uses() {
       <ParticlesBackground />
 
       {/* Gold spotlight ambient background */}
-      <div className="deco-img deco-hide-mobile" style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '90%', height: '550px', opacity: 0.35 }}>
+      <div className="deco-img deco-hide-mobile" style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '80%', height: '500px', opacity: 0.04 }}>
         <img src="/images/bg-gold-spotlight.png" alt="" aria-hidden="true" loading="lazy" />
       </div>
 
@@ -169,21 +169,6 @@ export default function Uses() {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Gold lotus before footer */}
-        <div className="relative flex justify-center mt-16 mb-4" style={{ zIndex: 10 }}>
-          <div className="deco-float" style={{ width: '260px', height: '260px', maxWidth: '85vw', opacity: 0.85 }}>
-            <img
-              src="/images/bg-gold-lotus.png"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-contain"
-              style={{ mixBlendMode: 'screen' }}
-              loading="lazy"
-            />
-          </div>
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 h-14 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
         </div>
       </main>
     </div>
